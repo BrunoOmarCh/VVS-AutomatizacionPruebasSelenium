@@ -27,14 +27,20 @@ namespace TestAutomation.Test.Inicio
         {
             //Slow load website
             var driver = new ChromeDriver();
-            driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
-            driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
-            var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));// para ubicar por id el elemento de la pagina
-            slowLoadWeb.Click();// para hacer click en el elemento.
+            driver.Manage().Window.Maximize();
+            driver.Url = "https://curso.testautomation.es"; 
+            var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));
+            slowLoadWeb.Click();
             Thread.Sleep(3000);// esto pausa la ejecucion x 3 segundos
             var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
             titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
-            driver.Quit(); //para liberar los recursos
+            driver.Quit(); 
+        }
+        [Test]
+        public void TestSlowLoadTextWebPage()
+        {
+            //Slow load text website
+
         }
     }
 }
