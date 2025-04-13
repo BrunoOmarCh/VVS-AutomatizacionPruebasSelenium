@@ -31,7 +31,9 @@ namespace TestAutomation.Test.Inicio
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
             var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));// para ubicar por id el elemento de la pagina
             slowLoadWeb.Click();// para hacer click en el elemento.
-
+            var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
+            titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
+            driver.Quit(); //para liberar los recursos
         }
     }
 }
