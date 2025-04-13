@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
-using OpenQA.Selenium.Chrome;
 
 namespace TestAutomation.Test.Inicio
 {
@@ -15,6 +10,8 @@ namespace TestAutomation.Test.Inicio
         public void TestBasicWebPage()
         {
             var driver = new ChromeDriver();
+            driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
+            driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
     }
 }
