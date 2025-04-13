@@ -1,5 +1,15 @@
 .vs/
-bin/
-obj/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+bin/
+obj/
+TestResults/
+*.log
+*.cache
+*.dbmdl
+*.pdb
+*.exe
+*.dll
+packages/
