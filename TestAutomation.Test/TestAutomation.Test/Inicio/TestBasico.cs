@@ -43,6 +43,12 @@ namespace TestAutomation.Test.Inicio
             var driver = new ChromeDriver();
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
+            var slowLoadTextWeb = driver.FindElement(By.Id("SlowSpeedTextWeb")); // para ubicar por id el elemento de la pagina
+            slowLoadTextWeb.Click();
+            var titulo = driver.FindElement(By.Id("title"));
+            titulo.Text.Should().Be("Slow load website");
+            driver.Quit();
+
         }
     }
 }
