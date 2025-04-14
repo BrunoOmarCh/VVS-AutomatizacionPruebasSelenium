@@ -44,9 +44,6 @@ namespace TestAutomation.Test.Inicio
         public void TestSlowLoadTextWebPage()
         {
             //Slow load text website
-            var driver = new ChromeDriver();
-            driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
-            driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
             var slowLoadTextWeb = driver.FindElement(By.Id("SlowSpeedTextWeb")); // para ubicar por id el elemento de la pagina
             slowLoadTextWeb.Click();
             Thread.Sleep(1500);
