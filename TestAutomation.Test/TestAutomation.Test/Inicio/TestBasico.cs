@@ -31,9 +31,6 @@ namespace TestAutomation.Test.Inicio
         public void TestSlowLoadWebPage()
         {
             //Slow load website
-            var driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-            driver.Url = "https://curso.testautomation.es"; 
             var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));
             slowLoadWeb.Click();
             Thread.Sleep(3000);// esto pausa la ejecucion x 3 segundos
