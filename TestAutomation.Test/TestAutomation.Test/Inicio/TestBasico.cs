@@ -21,9 +21,6 @@ namespace TestAutomation.Test.Inicio
         public void TestBasicWebPage()
         {
             //Normal load website
-            var driver = new ChromeDriver();
-            driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
-            driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
             var normalLoadWeb = driver.FindElement(By.Id("NormalWeb"));// para ubicar por id el elemento de la pagina
             normalLoadWeb.Click();// para hacer click en el elemento.
             var titulo = driver.FindElement(By.CssSelector("h1"));//para obtener el elemento que tine el tag h1
