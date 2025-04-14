@@ -9,9 +9,12 @@ namespace TestAutomation.Test.Inicio
     [TestFixture]
     public class TestBasico
     {
+        #pragma warning disable NUnit1032
+        ChromeDriver driver;
         [SetUp]
         public void SetUp()
         {
+            // todo lo que este dentro del SetUp se ejecutara antes de cualquier metodo
             //Resolver la duplicidad de codigo
             var driver = new ChromeDriver();
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
