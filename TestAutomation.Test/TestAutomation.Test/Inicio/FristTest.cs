@@ -39,6 +39,22 @@ namespace TestAutomation.Test.Inicio
             titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
             driver.Quit();
         }
+        [Test]
+        public void TestSlowLoadTextWebPage()
+        {
+            //Slow load text website
+            var driver = new ChromeDriver();
+            driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
+            driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
+            var slowLoadTextWeb = driver.FindElement(By.Id("SlowSpeedTextWeb")); // para ubicar por id el elemento de la pagina
+            slowLoadTextWeb.Click();
+            Thread.Sleep(1500);
+            //La página carga el texto del título con un pequeño retardo (1 segundo) .
+            //El test falla porque intenta leer el texto antes de que se haya cargado.
+            var titulo = driver.FindElement(By.Id("title"));
+            titulo.Text.Should().Be("Slow load website");
+            driver.Quit();
 
+        }
     }
 }
