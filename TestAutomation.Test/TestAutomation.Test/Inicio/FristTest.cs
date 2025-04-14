@@ -23,6 +23,22 @@ namespace TestAutomation.Test.Inicio
             titulo.Text.Should().Be("Normal load website"); //para obtener el valor texto.
             driver.Quit(); //para liberar los recursos
         }
+        [Test]
+        public void TestSlowLoadWebPage()
+        {
+            //Slow load website
+            var driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Url = "https://curso.testautomation.es";
+            var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));
+            slowLoadWeb.Click();
+            Thread.Sleep(3000);// esto pausa la ejecucion x 3 segundos
+            //Falla porque la página tarda unos segundos en cargar, Selenium intenta ubicar el elemento inmediatamente
+            //Lo que provoca un error porque aún no ha aparecido en el DOM.
+            var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
+            titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
+            driver.Quit();
+        }
 
     }
 }
