@@ -18,6 +18,8 @@ namespace TestAutomation.Test.Inicio
             //1. Resolver la duplicidad de codigo
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
+            driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(3);
+            //Esta indica a Selenium q cuando busqye un elemento lo haga por 3 segundos
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
         [TearDown]
