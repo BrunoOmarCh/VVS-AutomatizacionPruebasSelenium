@@ -15,11 +15,17 @@ namespace TestAutomation.Test.Inicio
         public void SetUp()
         {
             // todo lo que este dentro del SetUp se ejecutara antes de cualquier metodo
-            //Resolver la duplicidad de codigo
+            //1. Resolver la duplicidad de codigo
             var driver = new ChromeDriver();
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
+        [TearDown]
+        public void TearDown()
+        {
+            driver.Quit(); //para liberar los recursos
+        }
+
         [Test]
         public void TestBasicWebPage()
         {
@@ -28,7 +34,7 @@ namespace TestAutomation.Test.Inicio
             normalLoadWeb.Click();// para hacer click en el elemento.
             var titulo = driver.FindElement(By.CssSelector("h1"));//para obtener el elemento que tine el tag h1
             titulo.Text.Should().Be("Normal load website"); //para obtener el valor texto.
-            driver.Quit(); //para liberar los recursos
+            driver.Quit(); 
         }
         [Test]
         public void TestSlowLoadWebPage()
