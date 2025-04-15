@@ -34,7 +34,6 @@ namespace TestAutomation.Test.Inicio
             normalLoadWeb.Click();// para hacer click en el elemento.
             var titulo = driver.FindElement(By.CssSelector("h1"));//para obtener el elemento que tine el tag h1
             titulo.Text.Should().Be("Normal load website"); //para obtener el valor texto.
-            driver.Quit(); 
         }
         [Test]
         public void TestSlowLoadWebPage()
@@ -47,7 +46,6 @@ namespace TestAutomation.Test.Inicio
             //Lo que provoca un error porque aún no ha aparecido en el DOM.
             var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
             titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
-            driver.Quit(); 
         }
         [Test]
         public void TestSlowLoadTextWebPage()
@@ -60,8 +58,6 @@ namespace TestAutomation.Test.Inicio
             //El test falla porque intenta leer el texto antes de que se haya cargado.
             var titulo = driver.FindElement(By.Id("title"));
             titulo.Text.Should().Be("Slow load website");
-            driver.Quit();
-
         }
     }
 }
