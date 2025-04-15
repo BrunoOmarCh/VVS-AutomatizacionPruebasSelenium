@@ -16,7 +16,7 @@ namespace TestAutomation.Test.Inicio
         {
             // todo lo que este dentro del SetUp se ejecutara antes de cualquier metodo
             //1. Resolver la duplicidad de codigo
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
