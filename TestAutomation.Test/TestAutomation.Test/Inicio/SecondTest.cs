@@ -22,5 +22,12 @@ namespace TestAutomation.Test.Inicio
             driver.Manage().Window.Maximize(); // sentencia para maximizar navegador
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
+        [TearDown]
+        public void TearDown()
+        {
+            //2.Ahora resolveremos los del driver.Quit().
+            driver.Quit(); //para liberar los recursos
+        }
+
     }
 }
