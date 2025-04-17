@@ -41,6 +41,16 @@ namespace TestAutomation.Test.Inicio
             var titulo = driver.FindElement(By.CssSelector("h1"));//para obtener el elemento que tine el tag h1
             titulo.Text.Should().Be("Normal load website"); //para obtener el valor texto.
         }
-
+        [Test]
+        public void TestSlowLoadWebPage()
+        {
+            //Slow load website
+            var slowLoadWeb = driver.FindElement(By.Id("SlowLoadWeb"));
+            slowLoadWeb.Click();
+            //Falla porque la página tarda unos segundos en cargar, Selenium intenta ubicar el elemento inmediatamente
+            //Lo que provoca un error porque aún no ha aparecido en el DOM.
+            var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
+            titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
+        }
     }
 }
