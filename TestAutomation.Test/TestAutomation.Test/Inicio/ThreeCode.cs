@@ -12,5 +12,6 @@ namespace TestAutomation.Test.Inicio
 {
     public class ThreeCode
     {
+        [TestFixture]
     }
 }
