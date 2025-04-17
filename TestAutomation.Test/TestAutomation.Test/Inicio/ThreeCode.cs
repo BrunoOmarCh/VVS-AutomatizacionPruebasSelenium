@@ -26,5 +26,11 @@ namespace TestAutomation.Test.Inicio
             //Esta indica a Selenium q cuando busqye un elemento lo haga por 3 segundos
             driver.Url = "https://curso.testautomation.es"; //para navegar a la pj web que vamos a testear
         }
+        [TearDown]
+        public void TearDown()
+        {
+            //2.Ahora resolveremos los del driver.Quit().
+            driver.Quit(); //para liberar los recursos
+        }
     }
 }
