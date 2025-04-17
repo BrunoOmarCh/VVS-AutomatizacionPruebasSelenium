@@ -65,7 +65,10 @@ namespace TestAutomation.Test.Inicio
 
         private void WaitForCondition(Func<bool> condition, int msTimeout = 4000)
         {
-
+            // este codigo es muy util para controlar l
+            var stopWatch = new Stopwatch(); // definimos una variable de tipo Stopwatch
+            stopWatch.Start(); //iniciamos la variable.
+           
         }
     }
 }
