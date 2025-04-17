@@ -64,5 +64,10 @@ namespace TestAutomation.Test.Inicio
             // titulo.Text.Should().Be("Slow load website");
             WaitForCondition(() => IsTextElement(titulo, "Slow load website"));// es una expresion lambda.
         }
+        private bool IsTextElement(IWebElement element, string expectedText)
+        {
+            return element.Text.Equals(expectedText); //
+        }
+
     }
 }
