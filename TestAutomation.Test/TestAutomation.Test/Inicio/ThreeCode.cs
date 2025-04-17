@@ -68,6 +68,34 @@ namespace TestAutomation.Test.Inicio
         {
             return element.Text.Equals(expectedText); //
         }
+        private void WaitForCondition(Func<bool> condition, int msTimeout = 4000)
+        {
+            // este codigo es muy util para controlar l
+            var stopWatch = new Stopwatch(); // definimos una variable de tipo Stopwatch
+            stopWatch.Start(); //iniciamos la variable.
+            Exception? ex;
+            do
+            {
+                try
+                {
+                    ex = null;
+                    if (condition())
+                    {
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    ex = e;
+                }
+            } while (stopWatch.ElapsedMilliseconds < msTimeout);
+            stopWatch.Stop();
+            if (ex != null)
+            {
+                throw new TimeoutException("Error executing the condition&quot", ex);
+            }
+            throw new TimeoutException("Error the condition was false & quot", ex);// si la condicion es fase siempre
 
+        }
     }
 }
