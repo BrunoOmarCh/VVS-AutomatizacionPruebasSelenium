@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using FluentAssertions;
 using System.Diagnostics;
 using System;
+using System.Linq.Expressions;
 
 namespace TestAutomation.Test.Inicio
 {
@@ -60,7 +61,8 @@ namespace TestAutomation.Test.Inicio
             //La página carga el texto del título con un pequeño retardo (1 segundo) .
             //El test falla porque intenta leer el texto antes de que se haya cargado.
             var titulo = driver.FindElement(By.Id("title"));
-            titulo.Text.Should().Be("Slow load website");
+            // titulo.Text.Should().Be("Slow load website");
+            WaitForCondition(() => IsTextElement(titulo, "Slow load website"));// es una expresion lambda.
         }
         private bool IsTextElement(IWebElement element, string expectedText)
         {
