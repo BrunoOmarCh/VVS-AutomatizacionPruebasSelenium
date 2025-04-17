@@ -32,5 +32,15 @@ namespace TestAutomation.Test.Inicio
             //2.Ahora resolveremos los del driver.Quit().
             driver.Quit(); //para liberar los recursos
         }
+        [Test]
+        public void TestBasicWebPage()
+        {
+            //Normal load website
+            var normalLoadWeb = driver.FindElement(By.Id("NormalWeb"));// para ubicar por id el elemento de la pagina
+            normalLoadWeb.Click();// para hacer click en el elemento.
+            var titulo = driver.FindElement(By.CssSelector("h1"));//para obtener el elemento que tine el tag h1
+            titulo.Text.Should().Be("Normal load website"); //para obtener el valor texto.
+        }
+
     }
 }
