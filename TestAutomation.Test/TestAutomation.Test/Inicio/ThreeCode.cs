@@ -52,5 +52,17 @@ namespace TestAutomation.Test.Inicio
             var titulo = driver.FindElement(By.Id("title"));//para obtener el elemento que tiene title
             titulo.Text.Should().Be("Slow load website"); //para obtener el valor texto.
         }
+        [Test]
+        public void TestSlowLoadTextWebPage()
+        {
+            //Slow load text website
+            var slowLoadTextWeb = driver.FindElement(By.Id("SlowSpeedTextWeb")); // para ubicar por id el elemento de la pagina
+            slowLoadTextWeb.Click();
+            //La página carga el texto del título con un pequeño retardo (1 segundo) .
+            //El test falla porque intenta leer el texto antes de que se haya cargado.
+            var titulo = driver.FindElement(By.Id("title"));
+            // titulo.Text.Should().Be("Slow load website");
+            WaitForCondition(() => IsTextElement(titulo, "Slow load website"));// es una expresion lambda.
+        }
     }
 }
