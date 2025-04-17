@@ -62,7 +62,10 @@ namespace TestAutomation.Test.Inicio
             var titulo = driver.FindElement(By.Id("title"));
             titulo.Text.Should().Be("Slow load website");
         }
-
+        private bool IsTextElement(IWebElement element, string expectedText)
+        {
+            return element.Text.Equals(expectedText); //
+        }
         private void WaitForCondition(Func<bool> condition, int msTimeout = 4000)
         {
             // este codigo es muy util para controlar l
