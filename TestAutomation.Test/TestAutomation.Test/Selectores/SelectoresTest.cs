@@ -20,7 +20,12 @@ namespace TestAutomation.Test.Selectores
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             driver.Url = "https://curso.testautomation.es";
         }
+        [Test]
+        public void GetEachOfTheElements()
+        {
+        }
     }
-
 }
+
+
 
