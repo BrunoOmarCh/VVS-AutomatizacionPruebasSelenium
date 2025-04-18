@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
 
 namespace TestAutomation.Test.Selectores
 {
@@ -29,6 +30,10 @@ namespace TestAutomation.Test.Selectores
         public void GetEachOfTheElements()
         {
             driver.FindElement(By.Id("SelectorsWeb")).Click(); //selecciona el elemento de la web por Id.
+            //en la segunda pagina, seleccionamos el texto del Element 1
+            driver.FindElement(By.Id("myId")).Text.Should().Be("Element 1");//Id: MyId es como nombra el id que contiene el elemento
+            driver.FindElement(By.ClassName("className")).Text.Should().Be("Element 2");//Id: className es como nombra el id que contiene el elemento
+
         }
     }
 }
