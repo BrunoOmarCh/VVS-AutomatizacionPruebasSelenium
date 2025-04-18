@@ -62,6 +62,13 @@ namespace TestAutomation.Test.Selectores
             //para ubicar el element 6 por CSS.
             driver.FindElement(By.CssSelector("[autotestid= 'Element6']")).Text.Should().Be("Element 6");
 
+            // para ubicar Element 7 y 8 
+
+            var divElementsSection = driver.FindElements(By.CssSelector("[name='elements'] div"));// para obtener la lista de div
+            divElementsSection[5].Text. Should().Be("Element 7");// es 5 pues la lista inicia en 0
+     
+            divElementsSection[6].Text.Should().Be("Element 8");
+            
         }
     }
 }
