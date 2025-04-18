@@ -44,12 +44,10 @@ namespace TestAutomation.Test.Selectores
             // Opción 1: Usar FindElements para obtener todos los elementos con ID 'myld'
             // El índice [1] permite acceder al segundo elemento (por orden en el DOM)
             driver.FindElements(By.Id("myId"))[1].Text.Should().Be("Element 3");
-
             // Opción 2: Buscar dentro de una sección específica usando Name
             // Encuentra la sección 'elements' y luego ubica el ID 'myld' dentro de ella
             var elementsSecction = driver.FindElement(By.Name("elements"));
             elementsSecction.FindElement(By.Id("myId")).Text.Should().Be("Element 3");
-
             // Opcion 3: usando diectamente el selector de CSS.
             driver.FindElement(By.CssSelector("[name='elements'] [id='myId']")).Text.Should().Be("Element 3");
 
@@ -60,6 +58,10 @@ namespace TestAutomation.Test.Selectores
             driver.FindElement(By.CssSelector("div [style = 'color:magenta']")). Text. Should().Be("Element 5");
             // para element 5 usando Xpath: esto es arriesgado pues depende de como se escriba el texto.
             driver.FindElement(By.XPath("//*[contains(text(), 'Element 5')]")).Text.Should().Be("Element 5");
+
+            //para ubicar el element 6 por CSS.
+            driver.FindElement(By.CssSelector("[autotestid= 'Element6']")).Text.Should().Be("Element 6");
+
         }
     }
 }
