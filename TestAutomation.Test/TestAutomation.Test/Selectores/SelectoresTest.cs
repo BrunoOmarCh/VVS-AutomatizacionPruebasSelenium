@@ -39,7 +39,14 @@ namespace TestAutomation.Test.Selectores
             // Verifica el texto del segundo elemento mediante su clase
             driver.FindElement(By.ClassName("className")).Text.Should().Be("Element 2");
 
+            // ✅ Opción 1: Usar FindElements para obtener todos los elementos con ID 'myld'
+            // El índice [1] permite acceder al segundo elemento (por orden en el DOM)
+            driver.FindElements(By.Id("myld"))[1].Text.Should().Be("Element 3");
 
+            // ✅ Opción 2: Buscar dentro de una sección específica usando Name
+            // Encuentra la sección 'elements' y luego ubica el ID 'myld' dentro de ella
+            var elementsSecction = driver.FindElement(By.Name("elements"));
+            elementsSecction.FindElement(By.Id("myld")).Text.Should().Be("Element 3"); 
         }
     }
 }
