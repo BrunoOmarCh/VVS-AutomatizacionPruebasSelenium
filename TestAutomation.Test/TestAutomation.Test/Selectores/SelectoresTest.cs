@@ -23,6 +23,7 @@ namespace TestAutomation.Test.Selectores
         [Test]
         public void GetEachOfTheElements()
         {
+            driver.FindElement(By.Id("SelectorsWeb")).Click(); //selecciona el elemento de la web por Id.
         }
     }
 }
