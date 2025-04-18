@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using static System.Collections.Specialized.BitVector32;
 
 namespace TestAutomation.Test.Selectores
 {
@@ -29,10 +30,15 @@ namespace TestAutomation.Test.Selectores
         [Test]
         public void GetEachOfTheElements()
         {
-            driver.FindElement(By.Id("SelectorsWeb")).Click(); //selecciona el elemento de la web por Id.
-            //en la segunda pagina, seleccionamos el texto del Element 1
-            driver.FindElement(By.Id("myId")).Text.Should().Be("Element 1");//Id: MyId es como nombra el id que contiene el elemento
-            driver.FindElement(By.ClassName("className")).Text.Should().Be("Element 2");//Id: className es como nombra el id que contiene el elemento
+            // Navega a la sección 'SelectorsWeb' de la página
+            driver.FindElement(By.Id("SelectorsWeb")).Click();
+            // En la nueva página, verifica que el texto del primer elemento sea 'Element 1'
+            // Se usa ID duplicado, pero aún es posible ubicarlo directamente
+            driver.FindElement(By.Id("myId")).Text.Should().Be("Element 1");
+
+            // Verifica el texto del segundo elemento mediante su clase
+            driver.FindElement(By.ClassName("className")).Text.Should().Be("Element 2");
+
 
         }
     }
