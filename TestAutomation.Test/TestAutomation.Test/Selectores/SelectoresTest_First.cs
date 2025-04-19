@@ -49,6 +49,8 @@ namespace TestAutomation.Test.Selectores
             // Opcion 3: usando diectamente el selector de CSS.
             driver.FindElement(By.CssSelector("[name='elements'] [id='myId']")).Text.Should().Be("Element 3");
 
+            // para el elemnet 4, lo buscaremos por nombre
+            driver.FindElement(By.Name("myName")).Text.Should().Be("Element 4");
 
         }
     }
