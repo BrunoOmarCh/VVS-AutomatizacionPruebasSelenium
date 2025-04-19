@@ -69,6 +69,18 @@ namespace TestAutomation.Test.Selectores
             // Esto permite mejorar la mantenibilidad de los tests automatizados.
             driver.FindElement(By.CssSelector("[autotestid= 'Element6']")).Text.Should().Be("Element 6");
 
+            // para ubicar Element 7 y 8 
+            // CASO ESPECIAL: Element 7 y Element 8
+            // Estos elementos no tienen atributos útiles como ID, clase o nombre.
+            // Pero ambos están ubicados DENTRO del div con name="elements"
+            // Solución:
+            //  - Obtener todos los <div> dentro de la sección 'elements'
+            //  - Seleccionar por posición dentro de esa lista
+            // Nota: El índice comienza en 0, por lo tanto [5] = 6to elemento, [6] = 7mo elemento.
+            var divElementsSection = driver.FindElements(By.CssSelector("[name='elements'] div"));// para obtener la lista de div
+            divElementsSection[5].Text.Should().Be("Element 7");// es 5 pues la lista inicia en 0
+
+            divElementsSection[6].Text.Should().Be("Element 8");
 
         }
     }
