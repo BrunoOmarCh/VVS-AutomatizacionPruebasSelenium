@@ -34,7 +34,9 @@ namespace TestAutomation.Test.Selectores
             // En la nueva página, verifica que el texto del primer elemento sea 'Element 1'
             // Se usa ID duplicado, pero aún es posible ubicarlo directamente
             driver.FindElement(By.Id("myId")).Text.Should().Be("Element 1");
-
+            
+            // Verifica el texto del segundo elemento mediante su clase
+            driver.FindElement(By.ClassName("className")).Text.Should().Be("Element 2");
         }
     }
 }
