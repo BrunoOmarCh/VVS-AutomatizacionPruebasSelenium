@@ -60,10 +60,25 @@ namespace TestAutomation.Test.Selectores
             driver.FindElement(By.XPath("//*[contains(text(), 'Element 5')]")).Text.Should().Be("Element 5");
 
             //para ubicar el element 6 por CSS.
+            // CASO ESPECIAL: Element 6
+            // Este elemento usa un atributo personalizado llamado 'autotestid="Element6"'
+            // Este tipo de atributos son útiles cuando:
+            //  - No hay identificadores únicos
+            //  - Los ID son generados de forma aleatoria
+            //  - El HTML es complejo
+            // En estos casos, es importante hablar con los desarrolladores para que al menos:
+            //  - Las secciones (div) tengan identificadores únicos y estables
+            // Esto permite mejorar la mantenibilidad de los tests automatizados.
             driver.FindElement(By.CssSelector("[autotestid= 'Element6']")).Text.Should().Be("Element 6");
 
             // para ubicar Element 7 y 8 
-
+            // CASO ESPECIAL: Element 7 y Element 8
+            // Estos elementos no tienen atributos útiles como ID, clase o nombre.
+            // Pero ambos están ubicados DENTRO del div con name="elements"
+            // Solución:
+            //  - Obtener todos los <div> dentro de la sección 'elements'
+            //  - Seleccionar por posición dentro de esa lista
+            // Nota: El índice comienza en 0, por lo tanto [5] = 6to elemento, [6] = 7mo elemento.
             var divElementsSection = driver.FindElements(By.CssSelector("[name='elements'] div"));// para obtener la lista de div
             divElementsSection[5].Text. Should().Be("Element 7");// es 5 pues la lista inicia en 0
      
