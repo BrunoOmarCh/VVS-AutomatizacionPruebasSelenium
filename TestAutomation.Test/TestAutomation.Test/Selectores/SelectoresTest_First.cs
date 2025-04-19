@@ -25,5 +25,9 @@ namespace TestAutomation.Test.Selectores
         {
             driver.Close();
         }
+        [Test]
+        public void GetEachOfTheElements()
+        { 
+        }
     }
 }
