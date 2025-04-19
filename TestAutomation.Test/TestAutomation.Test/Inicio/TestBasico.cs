@@ -12,7 +12,7 @@ namespace TestAutomation.Test.Inicio
     [TestFixture]
     public class TestBasico
     {
-#pragma warning disable NUnit1032
+        #pragma warning disable NUnit1032
         ChromeDriver driver;
         [SetUp]
         public void SetUp()
