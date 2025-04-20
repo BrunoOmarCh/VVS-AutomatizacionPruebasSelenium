@@ -102,7 +102,13 @@ namespace TestAutomation.Test.Selectores
             homeButtons = refsSection.FindElements(By.PartialLinkText("Home"));
             homeButtons[0].Text.Should().Be("Home1");
             homeButtons[1].Text.Should().Be("Home2");
+
+            // para ubicar los botones click me 1 y click me 2
+            var home1 = homeButtons[0];
+            var button2 = driver.FindElement(RelativeBy.WithLocator(By.CssSelector("button")).RightOf(home1));
+            button2.Text.Should().Be("Click me 2");
         }
+    }
     }
 }
 
