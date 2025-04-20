@@ -9,6 +9,7 @@ using FluentAssertions;
 using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestAutomation.Test.Selectores
 {
@@ -92,8 +93,16 @@ namespace TestAutomation.Test.Selectores
             homeButtons[0].Text.Should().Be("Home1"); 
             homeButtons[1]. Text. Should().Be("Home2");
 
-        
-    }
+            // otra opcion para ubicar Home 1, 2 usando prtialText. Ojo en la pagina existe 3 Home
+            homeButtons = driver.FindElements(By.PartialLinkText("Home")); // para obtener la lista home. optiene 3
+            homeButtons[1].Text.Should().Be("Home1");
+            homeButtons[2].Text.Should().Be("Home2");
+            //otra opcion para ubicar Home. ubicando primero la seccion div ref.
+            var refsSection = driver.FindElement(By.Name("refs"));
+            homeButtons = refsSection.FindElements(By.PartialLinkText("Home"));
+            homeButtons[0].Text.Should().Be("Home1");
+            homeButtons[1].Text.Should().Be("Home2");
+        }
     }
 }
 
