@@ -10,12 +10,13 @@ using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
+using NUnit.Framework;
 
 namespace TestAutomation.Test.Selectores
 {
     public class SelectoresTest
     {
-        #pragma warning disable NUnit1032
+#pragma warning disable NUnit1032
         IWebDriver driver;
         [SetUp]
         public void SetUp()
@@ -56,7 +57,7 @@ namespace TestAutomation.Test.Selectores
             driver.FindElement(By.Name("myName")).Text.Should().Be("Element 4");
 
             //para el element 5, por CSS
-            driver.FindElement(By.CssSelector("div [style = 'color:magenta']")). Text. Should().Be("Element 5");
+            driver.FindElement(By.CssSelector("div [style = 'color:magenta']")).Text.Should().Be("Element 5");
             // para element 5 usando Xpath: esto es arriesgado pues depende de como se escriba el texto.
             driver.FindElement(By.XPath("//*[contains(text(), 'Element 5')]")).Text.Should().Be("Element 5");
 
@@ -81,8 +82,8 @@ namespace TestAutomation.Test.Selectores
             //  - Seleccionar por posición dentro de esa lista
             // Nota: El índice comienza en 0, por lo tanto [5] = 6to elemento, [6] = 7mo elemento.
             var divElementsSection = driver.FindElements(By.CssSelector("[name='elements'] div"));// para obtener la lista de div
-            divElementsSection[5].Text. Should().Be("Element 7");// es 5 pues la lista inicia en 0
-     
+            divElementsSection[5].Text.Should().Be("Element 7");// es 5 pues la lista inicia en 0
+
             divElementsSection[6].Text.Should().Be("Element 8");
 
 
@@ -90,8 +91,8 @@ namespace TestAutomation.Test.Selectores
             //Dentro de un div y dentro de el existen dos href con enlaces a paginas index.
             //lo que buscamos esta dentro de div llamada refs y alli div y a
             var homeButtons = driver.FindElements(By.CssSelector("[name= 'refs'] div > a")); // para obtener la lista home
-            homeButtons[0].Text.Should().Be("Home1"); 
-            homeButtons[1]. Text. Should().Be("Home2");
+            homeButtons[0].Text.Should().Be("Home1");
+            homeButtons[1].Text.Should().Be("Home2");
 
             // otra opcion para ubicar Home 1, 2 usando prtialText. Ojo en la pagina existe 3 Home
             homeButtons = driver.FindElements(By.PartialLinkText("Home")); // para obtener la lista home. optiene 3
@@ -107,10 +108,12 @@ namespace TestAutomation.Test.Selectores
             var home1 = homeButtons[0];
             var button2 = driver.FindElement(RelativeBy.WithLocator(By.CssSelector("button")).RightOf(home1));
             button2.Text.Should().Be("Click me 2");
+
+            //Tabla de usuarios inactivos.
+            //para obtener el valor de la tabla de usarios inactivos Sandra.
+            var interativetable = driver.FindElements(By.ClassName("styled-table"))[1];// Nos retorna la tabla de inactivos, toma el 2do
+            var inactiveUser = interativetable.FindElements(By.CssSelector("tbody tr"));//Nos retorna 2 elementos
+            Console.WriteLine(inactiveUser[1].Text);
         }
     }
-    }
 }
-
-
-
