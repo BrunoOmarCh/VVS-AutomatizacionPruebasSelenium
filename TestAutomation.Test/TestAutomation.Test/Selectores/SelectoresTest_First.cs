@@ -102,6 +102,12 @@ namespace TestAutomation.Test.Selectores
             var home1 = homeButtons[0];
             var button2 = driver.FindElement(RelativeBy.WithLocator(By.CssSelector("button")).RightOf(home1));
             button2.Text.Should().Be("Click me 2");
+
+            //Tabla de usuarios inactivos.
+            //para obtener el valor de la tabla de usarios inactivos Sandra.
+            var interativetable = driver.FindElements(By.ClassName("styled-table"))[1];// Nos retorna la tabla de inactivos, toma el 2do
+            var inactiveUser = interativetable.FindElements(By.CssSelector("tbody tr"));//Nos retorna 2 elementos
+            Console.WriteLine(inactiveUser[1].Text);
         }
     }
 }
