@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,13 @@ namespace TestAutomation.Test.Selectores
         [Test]
         public void GetEachOfTheElements()
         {
+            // Navega a la sección 'SelectorsWeb' de la página
+            driver.FindElement(By.Id("SelectorsWeb")).Click();
+            // En la nueva página, verifica que el texto del primer elemento sea 'Element 1'
+            // Se usa ID duplicado, pero aún es posible ubicarlo directamente
+            driver.FindElement(By.Id("myId")).Text.Should().Be("Element 1");
+
+
         }
     }
 }
