@@ -51,6 +51,11 @@ namespace TestAutomation.Test.Selectores
             // para el elemnet 4, lo buscaremos por nombre
             driver.FindElement(By.Name("myName")).Text.Should().Be("Element 4");
 
+            //para el element 5, por CSS
+            driver.FindElement(By.CssSelector("div [style = 'color:magenta']")).Text.Should().Be("Element 5");
+            // para element 5 usando Xpath: esto es arriesgado pues depende de como se escriba el texto.
+            driver.FindElement(By.XPath("//*[contains(text(), 'Element 5')]")).Text.Should().Be("Element 5");
+    
 
 
         }
