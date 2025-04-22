@@ -10,7 +10,7 @@ namespace TestAutomation.Test.Selectores
 {
     public class SelectoresTest_Two
     {
-        #pragma warning disable NUnit1032
+#pragma warning disable NUnit1032
         IWebDriver driver;
         [SetUp]
         public void SetUp()
@@ -24,6 +24,10 @@ namespace TestAutomation.Test.Selectores
         public void TearDownTest()
         {
             driver.Close();
+        }
+        [Test]
+        public void GetEachOfTheElements()
+        {
         }
     }
 }
