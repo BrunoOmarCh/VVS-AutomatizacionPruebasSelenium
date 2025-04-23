@@ -28,7 +28,14 @@ namespace TestAutomation.Test.Frame
         [Test]
         public void FrameTest()
         {
-            driver.FindElement(By.Id("DifferentFrames"));
+            //driver.FindElement(By.Id("DifferentFrames"));
+            //var webElementLeft = driver.FindElements(By.CssSelector("h2"));
+            //Error: inspecciona la pagina 2 vera que este h2 se encuentra}
+            // dentro de iframe.que asu vez tiene un document
+            //Entonces debemos cambiar, primero decirle que vaya
+            //iframe id=mainframe y después al iframe id = displayFrame.
+
+
         }
 
     }
