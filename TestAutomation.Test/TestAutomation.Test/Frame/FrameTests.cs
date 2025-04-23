@@ -36,6 +36,10 @@ namespace TestAutomation.Test.Frame
             //iframe id=mainframe y después al iframe id = displayFrame.
 
 
+            driver.FindElement(By.Id("DifferentFrames")).Click(); //hace el click en primera pagina y va a la segunda
+            driver.FindElement(By.CssSelector("button")).Click();// hace click en boton de la segunda pagina.se muestran los dos iframe
+
+
         }
 
     }
