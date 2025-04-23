@@ -40,6 +40,10 @@ namespace TestAutomation.Test.Frame
             driver.FindElement(By.CssSelector("button")).Click();// hace click en boton de la segunda pagina.se muestran los dos iframe
             driver.SwitchTo().Frame(0); // nos ubicamos en el primer iframe.
             var webElementLeft = driver.FindElement(By.CssSelector("h2")).Text; // optenemos el valor del texto
+            //para el segundo iframe
+            driver.SwitchTo().DefaultContent(); //retorna al contenedor general.
+            driver.SwitchTo().Frame(1);
+            var webElementRight = driver.FindElement(By.CssSelector("h2")).Text; // optenemos el valor del texto
 
         }
 
