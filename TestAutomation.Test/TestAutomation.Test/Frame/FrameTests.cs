@@ -24,6 +24,12 @@ namespace TestAutomation.Test.Frame
         public void TearDownTest()
         { 
             driver.Quit();
-        } 
+        }
+        [Test]
+        public void FrameTest()
+        {
+            driver.FindElement(By.Id("DifferentFrames"));
+        }
+
     }
 }
