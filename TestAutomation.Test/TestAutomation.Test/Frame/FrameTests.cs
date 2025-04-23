@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace TestAutomation.Test.Frame
 {
-    internal class FrameTests
-    {   
+    public class FrameTests
+    {
+        #pragma warning disable NUnit1032
+        IWebDriver driver;
     }
 }
