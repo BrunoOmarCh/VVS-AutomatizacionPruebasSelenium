@@ -88,6 +88,10 @@ namespace TestAutomation.Test.Selectores
             var homeButtons = driver.FindElements(By.CssSelector("[name= 'refs'] div > a")); // para obtener la lista home
             homeButtons[0].Text.Should().Be("Home1");
             homeButtons[1].Text.Should().Be("Home2");
+            // otra opcion para ubicar Home 1, 2 usando prtialText. Ojo en la pagina existe 3 Home
+            homeButtons = driver.FindElements(By.PartialLinkText("Home")); // para obtener la lista home. optiene 3
+            homeButtons[1].Text.Should().Be("Home1");
+            homeButtons[2].Text.Should().Be("Home2");
         }
     }
 }
