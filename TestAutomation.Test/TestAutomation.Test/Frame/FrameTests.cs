@@ -15,8 +15,15 @@ namespace TestAutomation.Test.Frame
         [SetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver(); driver.Manage().Window.Maximize(); driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            driver = new ChromeDriver(); 
+            driver.Manage().Window.Maximize(); 
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             driver.Url = "https://curso.testautomation.es";
         }
+        [TearDown]
+        public void TearDownTest()
+        { 
+            driver.Quit();
+        } 
     }
 }
