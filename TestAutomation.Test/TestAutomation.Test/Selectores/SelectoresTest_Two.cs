@@ -82,7 +82,12 @@ namespace TestAutomation.Test.Selectores
 
             divElementsSection[6].Text.Should().Be("Element 8");
 
-
+            //Para ubicar Home 1 y Home 2
+            //Dentro de un div y dentro de el existen dos href con enlaces a paginas index.
+            //lo que buscamos esta dentro de div llamada refs y alli div y a
+            var homeButtons = driver.FindElements(By.CssSelector("[name= 'refs'] div > a")); // para obtener la lista home
+            homeButtons[0].Text.Should().Be("Home1");
+            homeButtons[1].Text.Should().Be("Home2");
         }
     }
 }
