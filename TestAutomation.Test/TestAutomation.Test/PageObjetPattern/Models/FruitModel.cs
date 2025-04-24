@@ -11,5 +11,12 @@ namespace TestAutomation.Test.PageObjetPattern.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
+        // creamos su constructor
+        public FruitModel(string name, decimal price, string description)
+        {
+            Name = name;
+            Price = price;
+            Description = description;
+        }
     }
 }
