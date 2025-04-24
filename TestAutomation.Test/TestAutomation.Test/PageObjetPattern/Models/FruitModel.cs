@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TestAutomation.Test.PageObjetPattern.Models
 {
-    internal class FruitModel
+    public class FruitModel
     {
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; }
     }
 }
