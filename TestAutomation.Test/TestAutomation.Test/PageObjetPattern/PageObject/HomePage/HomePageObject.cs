@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
     {
         private readonly IWebDriver driver; //definiendo el driver
         //para las frutas que seran una lista
+        private List<IWebElement> DisplayedFruits =>
+            driver.FindElements(By.ClassName("fruit")).Where(fruit =>
+            fruit.Displayed).ToList();
     }
 }
