@@ -24,5 +24,12 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
         {
             return fruits.Select(fruit => Parse(fruit)).ToList();
         }
+
+        // Convierte un solo FruitWebElement en un FruitModel, extrayendo y parseando el precio.
+        public static FruitModel Parse(FruitWebElement element)
+        {
+            var price = decimal.Parse(element.Price.Split(' ')[0]);
+            return new FruitModel(element.Name, price, element.Description);
+        }
     }
 }
