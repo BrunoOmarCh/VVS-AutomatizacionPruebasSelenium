@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Models;
+using TestAutomation.Test.PageObjetPattern.PageObject.HomePage;
 
 namespace TestAutomation.Test.PageObjetPattern
 {
@@ -68,7 +69,10 @@ namespace TestAutomation.Test.PageObjetPattern
                 new FruitModel("Blackberry", 2.80m, "Sweet and juicy blackberries for desserts and smoothies."),
                 new FruitModel("Cranberry", 3.20m, "Tart and antioxidant-packed cranberries for holiday dishes."),
             };
-        }
 
+            var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
+            var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
+            var displayedOfDisplayedFruits = displayedFruits.Count();//la catidad (12frutas) se ponen a una variable
+        }
     }
 }
