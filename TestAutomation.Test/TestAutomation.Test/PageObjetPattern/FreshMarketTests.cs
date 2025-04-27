@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests
     {
+        #pragma warning disable NUnit1032
+        IWebDriver driver;
         /// <summary>
         /// Verify that the next provided fruits are displayed into the shop.
         /// Please check that the content of all fruits are correct.
