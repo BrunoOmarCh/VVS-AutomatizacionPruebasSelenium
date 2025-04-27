@@ -20,6 +20,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         driver.FindElement(By.Id("page1Button"));
         private IWebElement ButtonPage2 =>
         driver.FindElement(By.Id("page2Button"));
+        private IWebElement ButtonPage3 =>
+        driver.FindElement(By.Id("page3Button"));
+
         
     }
 }
