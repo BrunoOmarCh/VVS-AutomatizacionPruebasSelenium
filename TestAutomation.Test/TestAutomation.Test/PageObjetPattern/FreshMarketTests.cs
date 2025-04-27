@@ -24,6 +24,11 @@ namespace TestAutomation.Test.PageObjetPattern
             "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
         }
 
+        [TearDown]
+        public void TearDownTest()
+        {
+            driver.Quit();
+        }
 
         /// <summary>
         /// Verify that the next provided fruits are displayed into the shop.
@@ -64,5 +69,6 @@ namespace TestAutomation.Test.PageObjetPattern
                 new FruitModel("Cranberry", 3.20m, "Tart and antioxidant-packed cranberries for holiday dishes."),
             };
         }
+
     }
 }
