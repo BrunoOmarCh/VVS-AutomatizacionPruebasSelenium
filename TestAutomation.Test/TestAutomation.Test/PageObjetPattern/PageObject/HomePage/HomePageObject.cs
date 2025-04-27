@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Helpers;
+using TestAutomation.Test.PageObjetPattern.Models;
 
 
 namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
@@ -30,5 +31,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         {
             return FruitHelpers.Parse(DisplayedFruits);
         }
+
+        // metod que muestre la lista de frutas
+        public IList<FruitModel> DisplayedFruitModel()=>
+        FruitHelpers.Parse(DisplayedFruitWebElements());
+
     }
 }
