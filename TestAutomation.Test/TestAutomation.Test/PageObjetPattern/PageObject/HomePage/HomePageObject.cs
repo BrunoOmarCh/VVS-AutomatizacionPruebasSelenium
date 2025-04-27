@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestAutomation.Test.PageObjetPattern.Helpers;
+
 
 namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
@@ -15,5 +17,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         private List<IWebElement> DisplayedFruits =>
             driver.FindElements(By.ClassName("fruit")).Where(fruit =>
             fruit.Displayed).ToList();
+        //para mostrar la lista de frutas.
+        public IList<FruitWebElement> DisplayedFruitWebElements()
+        {
+            return FruitHelpers.Parse(DisplayedFruits);
+        }
     }
 }
