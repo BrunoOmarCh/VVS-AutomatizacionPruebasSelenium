@@ -29,6 +29,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             ButtonPage1.Click();
             return new HomePageObject(driver);
         }
+        public HomePageObject ClickButtonPage2()
+        {
+            ButtonPage2.Click();
+            return new HomePageObject(driver);
+        }
 
     }
 }
