@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,18 @@ namespace TestAutomation.Test.PageObjetPattern
     {
         #pragma warning disable NUnit1032
         IWebDriver driver;
+
+        [SetUp]
+        public void SetUp()
+        {
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            driver.Url =
+            "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
+        }
+
+
         /// <summary>
         /// Verify that the next provided fruits are displayed into the shop.
         /// Please check that the content of all fruits are correct.
