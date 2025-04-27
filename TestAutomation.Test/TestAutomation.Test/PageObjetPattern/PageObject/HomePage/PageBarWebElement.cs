@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
-    internal class PageBarWebElement
+    public class PageBarWebElement
     {
+        private readonly IWebDriver driver;
+        // el constructo de la clase
+        public PageBarWebElement(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+       
     }
 }
