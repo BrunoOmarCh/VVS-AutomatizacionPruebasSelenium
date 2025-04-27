@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -70,9 +71,13 @@ namespace TestAutomation.Test.PageObjetPattern
                 new FruitModel("Cranberry", 3.20m, "Tart and antioxidant-packed cranberries for holiday dishes."),
             };
 
+            var result = new List<FruitModel>();
             var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
-            var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
-            var displayedOfDisplayedFruits = displayedFruits.Count();//la catidad (12frutas) se ponen a una variable
+            result.AddRange(homePage.DisplayedFruitModel()); //con esto se obtienen 12 frutas de la page y se inserta }
+
+            //var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
+            //var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
+            //var displayedOfDisplayedFruits = displayedFruits.Count();//la catidad (12frutas) se ponen a una variable
         }
     }
 }
