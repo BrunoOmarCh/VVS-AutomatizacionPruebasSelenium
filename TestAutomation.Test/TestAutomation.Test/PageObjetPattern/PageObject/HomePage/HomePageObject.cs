@@ -25,7 +25,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         private List<IWebElement> DisplayedFruits =>
             driver.FindElements(By.ClassName("fruit")).Where(fruit =>
             fruit.Displayed).ToList();
-        
+
+        public PageBarWebElement PageNavegation => new PageBarWebElement(driver);
+
         //para mostrar la lista de frutas.
         public IList<FruitWebElement> DisplayedFruitWebElements()
         {
