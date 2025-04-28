@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
@@ -74,6 +75,12 @@ namespace TestAutomation.Test.PageObjetPattern
             var result = new List<FruitModel>();
             var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
             result.AddRange(homePage.DisplayedFruitModel()); //con esto se obtienen 12 frutas de la page y se inserta }
+
+            //para los otros rangos de frutas
+            result.AddRange(homePage.PageNavegation.ClickButtonPage2().DisplayedFruitModel()); 
+            result.AddRange(homePage.PageNavegation.ClickButtonPage3().DisplayedFruitModel());
+            //para comprar los valores cargados de la pagina contra lo que tenemos:
+            result.Should().BeEquivalentTo(expectedFruits);
 
             //var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
             //var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
