@@ -14,7 +14,7 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests
     {
-        #pragma warning disable NUnit1032
+#pragma warning disable NUnit1032
         IWebDriver driver;
 
         [SetUp]
@@ -77,7 +77,7 @@ namespace TestAutomation.Test.PageObjetPattern
             result.AddRange(homePage.DisplayedFruitModel()); //con esto se obtienen 12 frutas de la page y se inserta }
 
             //para los otros rangos de frutas
-            result.AddRange(homePage.PageNavegation.ClickButtonPage2().DisplayedFruitModel()); 
+            result.AddRange(homePage.PageNavegation.ClickButtonPage2().DisplayedFruitModel());
             result.AddRange(homePage.PageNavegation.ClickButtonPage3().DisplayedFruitModel());
             //para comprar los valores cargados de la pagina contra lo que tenemos:
             result.Should().BeEquivalentTo(expectedFruits);
@@ -86,5 +86,15 @@ namespace TestAutomation.Test.PageObjetPattern
             //var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
             //var displayedOfDisplayedFruits = displayedFruits.Count();//la catidad (12frutas) se ponen a una variable
         }
+        //Resumen
+        //Nos implementar el siguiente Test:
+        //1. Buscar ‘app’ pulsar Search, button y verique que solo Apple y Pineapple se nuestran
+        //2. Limpiar el Search, pulsar el botón Search, y verificar que 12 frutas y vegetales se muestran
+        //3. Buscar ‘ape’ pulsando la tecla ‘Enter’, y verificar que 2 frutas son mostradas Grape y GrapeFruit
+        [Test]
+        public void SearchTests()
+        {
+        }
+
     }
 }
