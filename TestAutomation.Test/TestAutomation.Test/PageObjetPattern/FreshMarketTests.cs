@@ -5,6 +5,8 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Models;
@@ -100,7 +102,7 @@ namespace TestAutomation.Test.PageObjetPattern
                 .InputSearch("app")
                 .ClickSearch()
                 .DisplayedFruitModel();
-            
+
             foundFruits.Count.Should().Be(2); //segun la condicion debe retornar solo 2
             // para obtener los nombre
             var foundFruitsName = foundFruits.Select(fruit => fruit.Name).ToList();
@@ -117,9 +119,24 @@ namespace TestAutomation.Test.PageObjetPattern
             .InputSearch("ape")
             .ClickEnter()
             .DisplayedFruitModel();
-            expectFruitNames = new[] { "Grape","Grapefruit"};
-        foundFruits.Select(fruit=>fruit.Name).Should().BeEquivalentTo(expectFruitNames);
-    }
+            expectFruitNames = new[] { "Grape", "Grapefruit" };
+            foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
+        }
 
+        //Resumen
+        //Shoping Car Testing:
+        //1. Verificar que el Shoping car icon, de la parte superior derecha tiene numero 0
+        //2. Añadir 10 apples, 6 bananas, 5 Avocado y 1 Pomegranate al Shoping Car
+        //(para encontrar las frutas use la navegación por pagina). Verificar que
+        //el Shoping car icon, de la parte superior derecha tiene un numero 4
+        //3. Abra el Shoping car y verifique que el item 4 del paso anterior ha
+        //sido adicionado y que su valor es correcto.Verifique que la cantidad total es correcta.
+        //4. Remueva el Pomegrante.Verifique que la cantidad es 3 en el icono del Shoping Car.
+        //5. Actualizar la cantidad de bananas a 3. Verificar que el costo total es correcto.
+        //6. Cerrar el caroo de compra
+        [Test]
+        public void ShoppingCartTest()
+        {
+        }
     }
 }
