@@ -106,6 +106,12 @@ namespace TestAutomation.Test.PageObjetPattern
             var foundFruitsName = foundFruits.Select(fruit => fruit.Name).ToList();
             var expectFruitNames = new[] { "Pineapple", "Apple" }; foundFruitsName.Should().BeEquivalentTo(expectFruitNames);
             //compara los valores
+            //para el test 2:
+            homePage.SearchBar
+                .InputSearch(string.Empty)
+                .ClickSearch()
+                .DisplayedFruitWebElements()
+                .Count.Should().Be(12);
         }
 
     }
