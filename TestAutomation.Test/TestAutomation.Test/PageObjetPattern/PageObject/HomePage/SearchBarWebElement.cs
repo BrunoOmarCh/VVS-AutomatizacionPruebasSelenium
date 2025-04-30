@@ -14,6 +14,13 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         // la barra de input y boton sarch esta no sera publica
         private IWebElement InputSearchProduct => driver.FindElement(By.Id("product-search"));
         private IWebElement ButtonSearch => driver.FindElement(By.Id("search-button"));
+        // acciones del input y boton search
+        public SearchBarWebElement InputSearch(string termToSearch)
+        {
+            InputSearchProduct.Clear();
+            InputSearchProduct.SendKeys(termToSearch);
+            return this;
+        }
 
     }
 }
