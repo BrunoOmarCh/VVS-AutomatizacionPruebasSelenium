@@ -14,13 +14,13 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
     public class HomePageObject
     {
         private readonly IWebDriver driver; //definiendo el driver
-        
+
         // definimos el contructor
         public HomePageObject(IWebDriver driver)
         {
             this.driver = driver;
         }
-        
+
         //para las frutas que seran una lista
         private List<IWebElement> DisplayedFruits =>
             driver.FindElements(By.ClassName("fruit")).Where(fruit =>
@@ -35,10 +35,16 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         }
 
         // metod que muestre la lista de frutas
-        public IList<FruitModel> DisplayedFruitModel()=>
+        public IList<FruitModel> DisplayedFruitModel() =>
         FruitHelpers.Parse(DisplayedFruitWebElements());
 
         // metodos para el segundo test
         public SearchBarWebElement SearchBar => new SearchBarWebElement(driver);
+
+        //metodo para el carrito de compras: TEST 3
+        private IWebElement ShoppingCartIcon => driver.FindElement(By.Id("cart-icon"));
+        public int GetShoppingCartIconNumberOfItem() =>
+            int.Parse(ShoppingCartIcon.Text);
+
     }
 }
