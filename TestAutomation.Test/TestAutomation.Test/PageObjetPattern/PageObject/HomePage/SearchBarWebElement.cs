@@ -27,6 +27,13 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             ButtonSearch.Click();
             return new HomePageObject(driver);
         }
-
+        //pulsando Enter
+        public HomePageObject ClickEnter()
+        {
+            new Actions(driver)
+            .SendKeys(Keys.Enter)
+            .Perform();
+            return new HomePageObject(driver);
+        }
     }
 }
