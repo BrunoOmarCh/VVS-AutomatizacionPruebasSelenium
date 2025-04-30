@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Models;
 using TestAutomation.Test.PageObjetPattern.PageObject.HomePage;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestAutomation.Test.PageObjetPattern
 {
@@ -94,6 +95,13 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
+            var homePage = new HomePageObject(driver); // no retorna la pagina
+            var foundFruits = homePage.SearchBar
+                .InputSearch("app")
+                .ClickSearch()
+                .DisplayedFruitModel();
+            
+
         }
 
     }
