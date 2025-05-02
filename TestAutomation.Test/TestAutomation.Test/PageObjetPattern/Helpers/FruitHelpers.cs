@@ -13,6 +13,11 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
 {
     public class FruitHelpers
     {
+        // Convierte una lista de IWebElement en una lista de FruitWebElement.
+        public static IList<FruitWebElement> Parse(IList<IWebElement> fruits)
+        {
+            return fruits.Select(fruit => new FruitWebElement(fruit)).ToList();
+        }
 
     }
 }
