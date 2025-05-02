@@ -13,23 +13,6 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
 {
     public class FruitHelpers
     {
-        // Convierte una lista de IWebElement en una lista de FruitWebElement.
-        public static IList<FruitWebElement> Parse(IList<IWebElement> fruits)
-        {
-            return fruits.Select(fruit => new FruitWebElement(fruit)).ToList();
-        }
 
-        // Convierte una lista de FruitWebElement en una lista de FruitModel.
-        public static IList<FruitModel> Parse(IList<FruitWebElement> fruits)
-        {
-            return fruits.Select(fruit => Parse(fruit)).ToList();
-        }
-
-        // Convierte un solo FruitWebElement en un FruitModel, extrayendo y parseando el precio.
-        public static FruitModel Parse(FruitWebElement element)
-        {
-            var price = decimal.Parse(element.Price.Split(' ')[0]);
-            return new FruitModel(element.Name, price, element.Description);
-        }
     }
 }
