@@ -9,5 +9,7 @@ namespace TestAutomation.Test.PageObjetPattern.Models
     public class FruitModel
     {
         public string Name { get; set; }
+        public decimal Price { get; set; }
+
     }
 }
