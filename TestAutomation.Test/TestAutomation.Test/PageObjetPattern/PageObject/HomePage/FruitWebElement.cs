@@ -10,6 +10,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
     public class FruitWebElement
     {
+        //De cada fruta necesitamos : Nombre, Precio y descripción, para luego crear un nuevo Fruit model
+        //trabajar sobre un IwebElement
+        private readonly IWebElement fruitWebElement;
+
 
     }
 }
