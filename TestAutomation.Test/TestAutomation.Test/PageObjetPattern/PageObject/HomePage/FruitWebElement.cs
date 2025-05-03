@@ -16,7 +16,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         public string Name =>
         fruitWebElement.FindElement(By.TagName("h2")).Text;
 
-
+        //ahora para el precio.
+        public string Price => fruitWebElement.FindElement(By.TagName("p")).Text;
+        
 
     }
 }
