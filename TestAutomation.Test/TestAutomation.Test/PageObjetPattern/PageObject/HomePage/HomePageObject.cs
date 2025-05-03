@@ -13,42 +13,6 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
     public class HomePageObject
     {
-        private readonly IWebDriver driver; //definiendo el driver
 
-        // definimos el contructor
-        public HomePageObject(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
-
-        //para las frutas que seran una lista
-        private List<IWebElement> DisplayedFruits =>
-            driver.FindElements(By.ClassName("fruit")).Where(fruit =>
-            fruit.Displayed).ToList();
-
-        public PageBarWebElement PageNavegation => new PageBarWebElement(driver);
-
-        //para mostrar la lista de frutas.
-        public IList<FruitWebElement> DisplayedFruitWebElements()
-        {
-            return FruitHelpers.Parse(DisplayedFruits);
-        }
-
-        // metod que muestre la lista de frutas
-        public IList<FruitModel> DisplayedFruitModel() =>
-        FruitHelpers.Parse(DisplayedFruitWebElements());
-
-        // metodos para el segundo test
-        public SearchBarWebElement SearchBar => new SearchBarWebElement(driver);
-
-        //metodo para el carrito de compras: TEST 3
-        private IWebElement ShoppingCartIcon => driver.FindElement(By.Id("cart-icon"));
-        public int GetShoppingCartIconNumberOfItem() =>
-            int.Parse(ShoppingCartIcon.Text);
-        //para abrir el carro de compras
-        public void ClickShoppingCartIcon()
-        {
-            ShoppingCartIcon.Click();
-        }
     }
 }
