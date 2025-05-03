@@ -13,6 +13,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         //De cada fruta necesitamos : Nombre, Precio y descripción, para luego crear un nuevo Fruit model
         //trabajar sobre un IwebElement
         private readonly IWebElement fruitWebElement;
+        public string Name =>
+        fruitWebElement.FindElement(By.TagName("h2")).Text;
+
 
 
     }
