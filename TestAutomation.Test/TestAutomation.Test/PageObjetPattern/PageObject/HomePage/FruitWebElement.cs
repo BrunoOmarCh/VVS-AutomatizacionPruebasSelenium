@@ -22,7 +22,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         //para la descripcion
         public string Description =>
         fruitWebElement.FindElements(By.TagName("p"))[1].Text;
-
+        // definimos su constructo. cuando se cree la variable fruitElement tenga un valor
+        public FruitWebElement(IWebElement fruitWebElement)
+        {
+            this.fruitWebElement = fruitWebElement;
+        }
 
     }
 }
