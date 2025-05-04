@@ -21,6 +21,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             this.driver = driver;
         }
 
+        //para las frutas que seran una lista
+        private List<IWebElement> DisplayedFruits =>
+            driver.FindElements(By.ClassName("fruit")).Where(fruit =>
+            fruit.Displayed).ToList();
+
 
     }
 }
