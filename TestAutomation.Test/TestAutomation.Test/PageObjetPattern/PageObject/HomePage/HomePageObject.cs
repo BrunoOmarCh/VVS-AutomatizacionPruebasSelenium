@@ -13,6 +13,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
     public class HomePageObject
     {
+        private readonly IWebDriver driver; //definiendo el driver
 
+ 
     }
 }
