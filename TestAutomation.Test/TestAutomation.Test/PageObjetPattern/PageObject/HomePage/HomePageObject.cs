@@ -34,5 +34,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             return FruitHelpers.Parse(DisplayedFruits);
         }
 
+        // metod que muestre la lista de frutas
+        public IList<FruitModel> DisplayedFruitModel() =>
+        FruitHelpers.Parse(DisplayedFruitWebElements());
+
     }
 }
