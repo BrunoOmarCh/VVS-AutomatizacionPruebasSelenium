@@ -15,6 +15,12 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
     {
         private readonly IWebDriver driver; //definiendo el driver
 
- 
+        // definimos el contructor
+        public HomePageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
+
     }
 }
