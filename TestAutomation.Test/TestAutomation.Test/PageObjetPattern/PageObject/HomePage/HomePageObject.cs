@@ -28,6 +28,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 
         public PageBarWebElement PageNavegation => new PageBarWebElement(driver);
 
+        //para mostrar la lista de frutas.
+        public IList<FruitWebElement> DisplayedFruitWebElements()
+        {
+            return FruitHelpers.Parse(DisplayedFruits);
+        }
 
     }
 }
