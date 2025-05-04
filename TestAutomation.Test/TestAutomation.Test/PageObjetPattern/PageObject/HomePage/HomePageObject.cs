@@ -26,6 +26,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             driver.FindElements(By.ClassName("fruit")).Where(fruit =>
             fruit.Displayed).ToList();
 
+        public PageBarWebElement PageNavegation => new PageBarWebElement(driver);
+
 
     }
 }
