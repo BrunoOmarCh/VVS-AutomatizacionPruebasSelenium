@@ -45,6 +45,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         private IWebElement ShoppingCartIcon => driver.FindElement(By.Id("cart-icon"));
         public int GetShoppingCartIconNumberOfItem() =>
             int.Parse(ShoppingCartIcon.Text);
-
+        //para abrir el carro de compras
+        public void ClickShoppingCartIcon()
+        {
+            ShoppingCartIcon.Click();
+        }
     }
 }
