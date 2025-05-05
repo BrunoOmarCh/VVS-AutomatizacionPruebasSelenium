@@ -38,5 +38,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         public IList<FruitModel> DisplayedFruitModel() =>
         FruitHelpers.Parse(DisplayedFruitWebElements());
 
+        // metodos para el segundo test
+        public SearchBarWebElement SearchBar => new SearchBarWebElement(driver);
+
+
+
     }
 }
