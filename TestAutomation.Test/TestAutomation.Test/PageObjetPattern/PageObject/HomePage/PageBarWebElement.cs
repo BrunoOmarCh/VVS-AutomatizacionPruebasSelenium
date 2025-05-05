@@ -15,6 +15,14 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         {
             this.driver = driver;
         }
+        // necesitamos definir los botones de navegacion entre paginas
+        private IWebElement ButtonPage1 =>
+        driver.FindElement(By.Id("page1Button"));
+        private IWebElement ButtonPage2 =>
+        driver.FindElement(By.Id("page2Button"));
+        private IWebElement ButtonPage3 =>
+        driver.FindElement(By.Id("page3Button"));
+
 
     }
 }
