@@ -41,7 +41,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         // metodos para el segundo test
         public SearchBarWebElement SearchBar => new SearchBarWebElement(driver);
 
-
+        //metodo para el carrito de compras: TEST 3
+        private IWebElement ShoppingCartIcon => driver.FindElement(By.Id("cart-icon"));
+        public int GetShoppingCartIconNumberOfItem() =>
+            int.Parse(ShoppingCartIcon.Text);
 
     }
 }
