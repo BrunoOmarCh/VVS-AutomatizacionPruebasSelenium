@@ -9,6 +9,12 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 {
     public class PageBarWebElement
     {
+        private readonly IWebDriver driver;
+        // el constructo de la clase
+        public PageBarWebElement(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
 
     }
 }
