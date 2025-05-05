@@ -23,6 +23,21 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         private IWebElement ButtonPage3 =>
         driver.FindElement(By.Id("page3Button"));
 
-
+        //accion de click sobre los botones
+        public HomePageObject ClickButtonPage1()
+        {
+            ButtonPage1.Click();
+            return new HomePageObject(driver);
+        }
+        public HomePageObject ClickButtonPage2()
+        {
+            ButtonPage2.Click();
+            return new HomePageObject(driver);
+        }
+        public HomePageObject ClickButtonPage3()
+        {
+            ButtonPage3.Click();
+            return new HomePageObject(driver);
+        }
     }
 }
