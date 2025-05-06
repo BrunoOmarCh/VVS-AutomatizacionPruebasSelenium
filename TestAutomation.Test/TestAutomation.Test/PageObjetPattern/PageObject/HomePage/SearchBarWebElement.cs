@@ -21,6 +21,12 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             InputSearchProduct.SendKeys(termToSearch);
             return this;
         }
+        //pulsamos click sobre el boton
+        public HomePageObject ClickSearch()
+        {
+            ButtonSearch.Click();
+            return new HomePageObject(driver);
+        }
 
     }
 }
