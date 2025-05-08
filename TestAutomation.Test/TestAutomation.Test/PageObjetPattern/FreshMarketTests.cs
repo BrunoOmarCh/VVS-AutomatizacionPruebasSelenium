@@ -17,6 +17,9 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests
     {
+        #pragma warning disable NUnit1032
+        IWebDriver driver;
+
 
     }
 }
