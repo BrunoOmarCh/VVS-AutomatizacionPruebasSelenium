@@ -97,6 +97,11 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
+            var homePage = new HomePageObject(driver); // no retorna la pagina
+            var foundFruits = homePage.SearchBar
+                .InputSearch("app")
+                .ClickSearch()
+                .DisplayedFruitModel();
 
     }
 }
