@@ -85,5 +85,18 @@ namespace TestAutomation.Test.PageObjetPattern
             //para comprar los valores cargados de la pagina contra lo que tenemos:
             result.Should().BeEquivalentTo(expectedFruits);
 
+            //var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
+            //var displayedFruits = homePage.DisplayedFruitWebElements(); //con esto se obtienen 12 frutas de la page
+            //var displayedOfDisplayedFruits = displayedFruits.Count();//la catidad (12frutas) se ponen a una variable
+        }
+        //Resumen
+        //Nos implementar el siguiente Test:
+        //1. Buscar ‘app’ pulsar Search, button y verique que solo Apple y Pineapple se nuestran
+        //2. Limpiar el Search, pulsar el botón Search, y verificar que 12 frutas y vegetales se muestran
+        //3. Buscar ‘ape’ pulsando la tecla ‘Enter’, y verificar que 2 frutas son mostradas Grape y GrapeFruit
+        [Test]
+        public void SearchTests()
+        {
+
     }
 }
