@@ -103,5 +103,7 @@ namespace TestAutomation.Test.PageObjetPattern
                 .ClickSearch()
                 .DisplayedFruitModel();
 
+            foundFruits.Count.Should().Be(2); //segun la condicion debe retornar solo 2
+
     }
 }
