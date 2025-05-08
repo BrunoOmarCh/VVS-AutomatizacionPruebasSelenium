@@ -75,5 +75,9 @@ namespace TestAutomation.Test.PageObjetPattern
                 new FruitModel("Cranberry", 3.20m, "Tart and antioxidant-packed cranberries for holiday dishes."),
             };
 
+            var result = new List<FruitModel>();
+            var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
+            result.AddRange(homePage.DisplayedFruitModel()); //con esto se obtienen 12 frutas de la page y se inserta }
+
     }
 }
