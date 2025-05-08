@@ -30,5 +30,11 @@ namespace TestAutomation.Test.PageObjetPattern
             "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
         }
 
+        [TearDown]
+        public void TearDownTest()
+        {
+            driver.Quit();
+        }
+
     }
 }
