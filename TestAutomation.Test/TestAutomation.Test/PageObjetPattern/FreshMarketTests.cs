@@ -123,5 +123,20 @@ namespace TestAutomation.Test.PageObjetPattern
             foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
         }
 
+        //Resumen
+        //Shoping Car Testing:
+        //1. Verificar que el Shoping car icon, de la parte superior derecha tiene numero 0
+        //2. Añadir 10 apples, 6 bananas, 5 Avocado y 1 Pomegranate al Shoping Car
+        //(para encontrar las frutas use la navegación por pagina). Verificar que
+        //el Shoping car icon, de la parte superior derecha tiene un numero 4
+        //3. Abra el Shoping car y verifique que el item 4 del paso anterior ha
+        //sido adicionado y que su valor es correcto.Verifique que la cantidad total es correcta.
+        //4. Remueva el Pomegrante.Verifique que la cantidad es 3 en el icono del Shoping Car.
+        //5. Actualizar la cantidad de bananas a 3. Verificar que el costo total es correcto.
+        //6. Cerrar el caroo de compra
+        [Test]
+        public void ShoppingCartTest()
+        {
+
     }
 }
