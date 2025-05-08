@@ -82,6 +82,8 @@ namespace TestAutomation.Test.PageObjetPattern
             //para los otros rangos de frutas
             result.AddRange(homePage.PageNavegation.ClickButtonPage2().DisplayedFruitModel());
             result.AddRange(homePage.PageNavegation.ClickButtonPage3().DisplayedFruitModel());
+            //para comprar los valores cargados de la pagina contra lo que tenemos:
+            result.Should().BeEquivalentTo(expectedFruits);
 
     }
 }
