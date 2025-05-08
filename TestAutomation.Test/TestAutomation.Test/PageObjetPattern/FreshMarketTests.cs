@@ -114,6 +114,14 @@ namespace TestAutomation.Test.PageObjetPattern
                 .ClickSearch()
                 .DisplayedFruitWebElements()
                 .Count.Should().Be(12);
+            //par el 3. que es similar al 1.
+            foundFruits = homePage.SearchBar
+            .InputSearch("ape")
+            .ClickEnter()
+            .DisplayedFruitModel();
+            expectFruitNames = new[] { "Grape", "Grapefruit" };
+            foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
+        }
 
     }
 }
