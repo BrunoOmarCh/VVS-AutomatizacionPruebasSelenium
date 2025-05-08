@@ -79,5 +79,9 @@ namespace TestAutomation.Test.PageObjetPattern
             var homePage = new HomePageObject(driver); // se obtiene la pagin donde estan las frutas.
             result.AddRange(homePage.DisplayedFruitModel()); //con esto se obtienen 12 frutas de la page y se inserta }
 
+            //para los otros rangos de frutas
+            result.AddRange(homePage.PageNavegation.ClickButtonPage2().DisplayedFruitModel());
+            result.AddRange(homePage.PageNavegation.ClickButtonPage3().DisplayedFruitModel());
+
     }
 }
