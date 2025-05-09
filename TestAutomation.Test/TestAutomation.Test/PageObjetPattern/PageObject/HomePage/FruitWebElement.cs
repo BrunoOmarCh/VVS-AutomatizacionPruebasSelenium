@@ -33,6 +33,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         {
             this.fruitWebElement = fruitWebElement;
         }
+        public void ClickAddToCar() => ButtonAddToCart.Click();
 
     }
 }
