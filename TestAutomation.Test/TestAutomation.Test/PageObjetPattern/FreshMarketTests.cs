@@ -137,6 +137,9 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void ShoppingCartTest()
         {
-
+            //tarea 1. verificar que el icon de arriba es 0
+            var homePage = new HomePageObject(driver);
+            homePage.GetShoppingCartIconNumberOfItem().Should().Be(0);
+        }
     }
 }
