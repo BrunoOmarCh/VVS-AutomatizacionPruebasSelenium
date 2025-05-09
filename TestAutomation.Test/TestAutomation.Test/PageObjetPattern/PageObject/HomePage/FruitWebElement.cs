@@ -28,5 +28,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         //para el boton
         private IWebElement ButtonAddToCart => fruitWebElement.FindElement(By.CssSelector("button"));
 
+        // definimos su constructo. cuando se cree la variable fruitElement tenga un valor
+        public FruitWebElement(IWebElement fruitWebElement)
+        {
+            this.fruitWebElement = fruitWebElement;
+        }
+
     }
 }
