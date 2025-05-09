@@ -14,6 +14,24 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
             // este codigo es muy util para controlar I
             var stopWatch = new Stopwatch(); // definimos una variable de tipo Stopwatch
             stopWatch.Start(); //iniciamos la variable.
+            Exception? ex;
+            do
+            {
+                try
+                {
+                    ex = null;
+                    if (condition())
+                    {
+                        return;
+                    }
+                }
+                catch (Exception e)
+                {
+                    ex = e;
+                }
+            } while (stopWatch.ElapsedMilliseconds < msTimeout);
+            stopWatch.Stop();
 
+        }
     }
 }
