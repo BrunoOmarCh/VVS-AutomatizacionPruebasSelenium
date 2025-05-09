@@ -25,6 +25,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
 
         //selectores para el Test3: Quantity y Add to car.
         private IWebElement InputFieldQuantity => fruitWebElement.FindElement(By.CssSelector("[id$='Quantity']"));
+        //para el boton
+        private IWebElement ButtonAddToCart => fruitWebElement.FindElement(By.CssSelector("button"));
 
     }
 }
