@@ -31,7 +31,11 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
                 }
             } while (stopWatch.ElapsedMilliseconds < msTimeout);
             stopWatch.Stop();
-
+            if (ex != null)
+            {
+                throw new TimeoutException("Error executing the condition", ex);
+            }
+            throw new TimeoutException("Error the condition was false", ex);// si la condicion es fase siempre
         }
     }
 }
