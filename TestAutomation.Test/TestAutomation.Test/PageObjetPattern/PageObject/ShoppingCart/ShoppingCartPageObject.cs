@@ -11,6 +11,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
     {
         private readonly IWebDriver driver;
         private IWebElement TotalPrice => driver.FindElement(By.Id("totalPrice"));
+        private IWebElement ButtonClose => driver.FindElement(By.Id("CloseCart"));
+
 
         public ShoppingCartPageObject(IWebDriver driver)
         {
