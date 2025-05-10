@@ -9,11 +9,14 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
 {
     public class ShoppingCartPageObject
     {
+        private readonly IWebDriver driver;
+        private IWebElement TotalPrice => driver.FindElement(By.Id("totalPrice"));
 
         public ShoppingCartPageObject(IWebDriver driver)
         {
             this.driver = driver;
         }
+
 
     }
 }
