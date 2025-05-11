@@ -21,7 +21,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         {
             this.driver = driver;
         }
- 
+        public void ClickButtonClose() => ButtonClose.Click();
+
 
     }
 }
