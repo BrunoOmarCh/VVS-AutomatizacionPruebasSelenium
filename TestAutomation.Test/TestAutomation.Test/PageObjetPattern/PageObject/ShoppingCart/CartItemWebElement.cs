@@ -9,6 +9,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
 {
     public class CartItemWebElement
     {
-
+        private IWebElement element;
+        public CartItemWebElement(IWebElement element)
+        {
+            this.element = element;
+        }
+        
     }
 }
