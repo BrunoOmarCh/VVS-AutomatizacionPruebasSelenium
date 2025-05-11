@@ -14,12 +14,14 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         private IWebElement ButtonClose => driver.FindElement(By.Id("CloseCart"));
         private List<IWebElement> Cartitems => driver.FindElements(By.ClassName(
             "cart-item")).ToList();
-       
+        public IEnumerable<CartItemWebElement> CartItemWebElements => Cartitems.
+            Select(item => new CartItemWebElement(item));
+
         public ShoppingCartPageObject(IWebDriver driver)
         {
             this.driver = driver;
         }
-
+ 
 
     }
 }
