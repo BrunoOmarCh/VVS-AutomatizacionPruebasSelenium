@@ -22,7 +22,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
             this.driver = driver;
         }
         public void ClickButtonClose() => ButtonClose.Click();
-
+        public decimal GetTotalPrice() => decimal.Parse(TotalPrice.Text);
+        public decimal GetTotalPriceFromItems() => CartItemWebElements.Sum(item => item.GetTotalPrice());
 
     }
 }
