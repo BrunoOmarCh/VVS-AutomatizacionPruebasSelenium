@@ -14,6 +14,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         {
             this.element = element;
         }
-        
+        private IWebElement ButtonRemove =>
+        element.FindElement(By.CssSelector("button"));
+
     }
 }
