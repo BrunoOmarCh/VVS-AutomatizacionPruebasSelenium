@@ -22,6 +22,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         element.FindElement(By.CssSelector("input"));
 
         public void ClickButtonRemove() => ButtonRemove.Click();
+        public string GetText() => InfoText.Text;
 
     }
 }
