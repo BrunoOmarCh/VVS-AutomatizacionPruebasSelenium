@@ -18,6 +18,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         element.FindElement(By.CssSelector("button"));
         private IWebElement InfoText =>
         element.FindElement(By.CssSelector("span"));
+        private IWebElement InputFieldQuantity =>
+        element.FindElement(By.CssSelector("input"));
+
 
     }
 }
