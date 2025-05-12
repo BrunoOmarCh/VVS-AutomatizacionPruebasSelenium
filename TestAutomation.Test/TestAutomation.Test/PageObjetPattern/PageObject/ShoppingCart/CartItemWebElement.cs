@@ -23,6 +23,13 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
 
         public void ClickButtonRemove() => ButtonRemove.Click();
         public string GetText() => InfoText.Text;
+        public void InputQuantity(int quantity)
+        {
+            InputFieldQuantity.Clear();
+            InputFieldQuantity.SendKeys(quantity.ToString());
+            InputFieldQuantity.SendKeys(Keys.Tab);
+        }
+        public int GetQuantity() => int.Parse(InputFieldQuantity.GetAttribute("value"));
 
     }
 }
