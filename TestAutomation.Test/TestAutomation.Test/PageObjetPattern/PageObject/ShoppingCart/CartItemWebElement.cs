@@ -21,6 +21,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
         private IWebElement InputFieldQuantity =>
         element.FindElement(By.CssSelector("input"));
 
+        public void ClickButtonRemove() => ButtonRemove.Click();
 
     }
 }
