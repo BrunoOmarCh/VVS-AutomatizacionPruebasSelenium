@@ -30,6 +30,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
             InputFieldQuantity.SendKeys(Keys.Tab);
         }
         public int GetQuantity() => int.Parse(InputFieldQuantity.GetAttribute("value"));
+        public decimal GetTotalPrice() => GetQuantity() * GetPrice();
 
     }
 }
