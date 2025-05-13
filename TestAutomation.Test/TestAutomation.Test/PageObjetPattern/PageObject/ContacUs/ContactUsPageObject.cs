@@ -12,6 +12,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
     {
         //4.2.1 
         private IWebDriver driver;
+        //pripiedades
+        private IWebElement InputFieldContactTitle => driver.FindElement(By.Id("contactTitle"));
 
     }
 }
