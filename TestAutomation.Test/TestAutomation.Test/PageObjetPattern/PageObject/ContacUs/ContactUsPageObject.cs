@@ -16,6 +16,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         private IWebElement InputFieldContactTitle => driver.FindElement(By.Id("contactTitle"));
         private IWebElement InputFieldContactEmail => driver.FindElement(By.Id("contactEmail"));
         private SelectElement DropdownCategory => new SelectElement(driver.FindElement(By.Id("contactCategory")));
+        private IWebElement InputFieldContactText => driver.FindElement(By.Id("contactText"));
 
     }
 }
