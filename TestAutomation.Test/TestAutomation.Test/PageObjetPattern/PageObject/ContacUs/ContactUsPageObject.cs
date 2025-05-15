@@ -27,5 +27,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         private IWebElement EmailErrorMessage => driver.FindElement(By.Id("contactEmailError"));
         private IWebElement TextErrorMessage => driver.FindElement(By.Id("contactTextError"));
 
+        //definimos el constructor
+        public ContactUsPageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
     }
 }
