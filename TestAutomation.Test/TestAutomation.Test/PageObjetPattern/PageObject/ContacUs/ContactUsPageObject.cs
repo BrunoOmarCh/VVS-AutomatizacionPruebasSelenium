@@ -19,6 +19,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         private IWebElement InputFieldContactText => driver.FindElement(By.Id("contactText"));
         private IWebElement ButtonSubmit =>
         driver.FindElement(By.CssSelector("#contactForm button"));
+        private IWebElement ButtonClose => driver.FindElement(By.Id("closeContactPopup"));
 
     }
 }
