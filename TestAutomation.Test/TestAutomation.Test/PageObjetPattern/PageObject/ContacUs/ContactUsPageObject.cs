@@ -25,6 +25,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         //4.3.2 
         private IWebElement TitleErrorMessage => driver.FindElement(By.Id("contactTitleError"));
         private IWebElement EmailErrorMessage => driver.FindElement(By.Id("contactEmailError"));
+        private IWebElement TextErrorMessage => driver.FindElement(By.Id("contactTextError"));
 
     }
 }
