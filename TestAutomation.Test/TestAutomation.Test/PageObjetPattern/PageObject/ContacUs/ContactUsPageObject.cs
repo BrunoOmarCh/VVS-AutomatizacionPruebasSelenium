@@ -21,5 +21,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         driver.FindElement(By.CssSelector("#contactForm button"));
         private IWebElement ButtonClose => driver.FindElement(By.Id("closeContactPopup"));
 
+        //para los msg de error
+        //4.3.2 
+        private IWebElement TitleErrorMessage => driver.FindElement(By.Id("contactTitleError"));
+
     }
 }
