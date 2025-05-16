@@ -32,6 +32,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         {
             this.driver = driver;
         }
+        //4.3.1 
+        public void ClickSumit() => ButtonSubmit.Click();
 
     }
 }
