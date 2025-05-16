@@ -35,5 +35,10 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         //4.3.1 
         public void ClickSumit() => ButtonSubmit.Click();
 
+        //es un if compacto si existe error entonces el text caso contrario null
+        //4.3.2 
+        public string? GetDisplayedTitleErrorMessage() =>
+        TitleErrorMessage.Displayed ? TitleErrorMessage.Text : null;
+
     }
 }
