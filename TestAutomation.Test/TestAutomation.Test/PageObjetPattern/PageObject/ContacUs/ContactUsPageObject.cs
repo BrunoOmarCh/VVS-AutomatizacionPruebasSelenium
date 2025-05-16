@@ -44,5 +44,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         public string? GetDisplayedTextErrorMessage() =>
         TextErrorMessage.Displayed ? TextErrorMessage.Text : null;
 
+        //4.4.1
+        public IEnumerable<string> GetCategoryOptions() =>
+               DropdownCategory.Options.Select(category => category.Text);
+
     }
 }
