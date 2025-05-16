@@ -41,6 +41,8 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         TitleErrorMessage.Displayed ? TitleErrorMessage.Text : null;
         public string? GetDisplayedEmailErrorMessage() =>
         EmailErrorMessage.Displayed ? EmailErrorMessage.Text : null;
+        public string? GetDisplayedTextErrorMessage() =>
+        TextErrorMessage.Displayed ? TextErrorMessage.Text : null;
 
     }
 }
