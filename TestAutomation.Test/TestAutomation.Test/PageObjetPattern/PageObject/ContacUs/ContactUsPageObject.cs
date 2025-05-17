@@ -62,12 +62,7 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
             return this;
         }
 
-        public ContactUsPageObject InputTextContactMessage(string message)
-        {
-            InputFieldContactText.Clear();
-            InputFieldContactText.SendKeys(message);
-            return this;
-        }
+
 
     }
 }
