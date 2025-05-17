@@ -68,7 +68,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
             InputFieldContactText.SendKeys(message);
             return this;
         }
-
+        public ContactUsPageObject SelectCategory(string category)
+        {
+            DropdownCategory.SelectByText(category);
+            return this;
+        }
 
     }
 }
