@@ -48,5 +48,13 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
         public IEnumerable<string> GetCategoryOptions() =>
                DropdownCategory.Options.Select(category => category.Text);
 
+        //4.5.1 metodos para capturar los datos validos
+        public ContactUsPageObject InputTextContactTitle(string title)
+        {
+            InputFieldContactTitle.Clear();
+            InputFieldContactTitle.SendKeys(title);
+            return this;
+        }
+
     }
 }
