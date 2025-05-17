@@ -55,6 +55,12 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.ContacUs
             InputFieldContactTitle.SendKeys(title);
             return this;
         }
+        public ContactUsPageObject InputTextContactEmail(string email)
+        {
+            InputFieldContactEmail.Clear();
+            InputFieldContactEmail.SendKeys(email);
+            return this;
+        }
 
     }
 }
