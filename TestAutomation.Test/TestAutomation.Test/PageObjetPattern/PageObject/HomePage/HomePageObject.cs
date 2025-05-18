@@ -71,6 +71,11 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         //para el 4to test
         //4.1.1 
         private IWebElement ButtonContactUs => driver.FindElement(By.Id("openContactPopup"));
-
+        //4.2.2
+        public ContactUsPageObject clickContactUs()
+        {
+            ButtonContactUs.Click();
+            return new ContactUsPageObject(driver);
+        }
     }
 }
