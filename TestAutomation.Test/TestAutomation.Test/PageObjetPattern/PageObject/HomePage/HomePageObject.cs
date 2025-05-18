@@ -62,6 +62,12 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             }
         }
 
+        //para abrir el carro de compras
+        public ShoppingCartPageObject ClickShoppingCartIcon()
+        {
+            ShoppingCartIcon.Click();
+            return new ShoppingCartPageObject(driver);
+        }
 
     }
 }
