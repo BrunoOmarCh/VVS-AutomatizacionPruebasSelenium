@@ -68,6 +68,9 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             ShoppingCartIcon.Click();
             return new ShoppingCartPageObject(driver);
         }
+        //para el 4to test
+        //4.1.1 
+        private IWebElement ButtonContactUs => driver.FindElement(By.Id("openContactPopup"));
 
     }
 }
