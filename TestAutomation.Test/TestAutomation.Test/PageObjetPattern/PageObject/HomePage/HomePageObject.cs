@@ -4,9 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Helpers;
 using TestAutomation.Test.PageObjetPattern.Models;
+using TestAutomation.Test.PageObjetPattern.PageObject.ContacUs;
+using TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart;
 
 
 namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
@@ -45,10 +48,20 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
         private IWebElement ShoppingCartIcon => driver.FindElement(By.Id("cart-icon"));
         public int GetShoppingCartIconNumberOfItem() =>
             int.Parse(ShoppingCartIcon.Text);
-        //para abrir el carro de compras
-        public void ClickShoppingCartIcon()
+        public bool IsShoppingCartIconNumberOfItems(int number)
         {
-            ShoppingCartIcon.Click();
+            try
+            {
+                WaitHelper.WaitForCondition(() =>
+                int.Parse(ShoppingCartIcon.Text).Equals(number));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
+
+
     }
 }
