@@ -8,5 +8,7 @@ namespace TestAutomation.Test.PageObjetPattern.Models
 {
     public class TestSettings
     {
+        public string Browser { get; set; }
+
     }
 }
