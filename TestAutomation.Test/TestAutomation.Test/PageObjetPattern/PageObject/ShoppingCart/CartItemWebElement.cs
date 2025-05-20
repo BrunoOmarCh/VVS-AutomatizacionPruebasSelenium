@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart
 {
     public class CartItemWebElement
     {
         private IWebElement element;
-        public CartItemWebElement(IWebElement element)
-        {
-            this.element = element;
-        }
         private IWebElement ButtonRemove =>
         element.FindElement(By.CssSelector("button"));
         private IWebElement InfoText =>
         element.FindElement(By.CssSelector("span"));
         private IWebElement InputFieldQuantity =>
         element.FindElement(By.CssSelector("input"));
-
+        public CartItemWebElement(IWebElement element)
+        {
+            this.element = element;
+        }
         public void ClickButtonRemove() => ButtonRemove.Click();
         public string GetText() => InfoText.Text;
         public void InputQuantity(int quantity)
