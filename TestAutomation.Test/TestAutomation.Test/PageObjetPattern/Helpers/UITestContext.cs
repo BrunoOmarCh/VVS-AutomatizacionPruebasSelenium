@@ -18,6 +18,8 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
         {
             //Driver = new ChromeDriver(); 
             Driver = WebDriverFactory.GetWebDriver(TestBase.TestSettings.Browser.ToLower());
+            Driver.Manage().Window.Maximize();
+
         }
 
     }
