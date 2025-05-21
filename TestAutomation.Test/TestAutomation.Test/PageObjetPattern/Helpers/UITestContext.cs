@@ -12,6 +12,13 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
 {
     public class UITestContext : IDisposable
     {
+        //esta clase se encargara de crear los drivers y ponerlos a disposición cuando se demanden.
+        public IWebDriver Driver { get; set; }
+        public UITestContext()
+        {
+            //Driver = new ChromeDriver(); 
+            Driver = WebDriverFactory.GetWebDriver(TestBase.TestSettings.Browser.ToLower());
+        }
 
     }
 }
