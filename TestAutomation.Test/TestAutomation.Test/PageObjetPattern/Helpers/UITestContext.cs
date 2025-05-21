@@ -23,7 +23,8 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
             //por la variable definida en el archivo json:
             Driver.Manage().Timeouts().ImplicitWait =
             TimeSpan.FromSeconds(TestBase.TestSettings.WaitTimeout);
-
+            Driver.Url =
+            "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
         }
 
     }
