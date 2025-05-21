@@ -26,6 +26,9 @@ namespace TestAutomation.Test.PageObjetPattern.Helpers
             Driver.Url =
             "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
         }
-
+        public void Dispose()
+        {
+            Driver.Dispose();
+        }
     }
 }
