@@ -20,7 +20,8 @@ namespace TestAutomation.Test.PageObjetPattern
             var settings = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", false, true)
             .Build();
-
+            var automationSettings = settings.GetSection("Automation Settings");
+            automationSettings.Bind(TestSettings);
         }
     }
 }
