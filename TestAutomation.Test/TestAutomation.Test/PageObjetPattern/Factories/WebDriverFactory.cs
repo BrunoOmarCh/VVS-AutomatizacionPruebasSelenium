@@ -17,6 +17,8 @@ namespace TestAutomation.Test.PageObjetPattern.Factories
             switch (browsername)
             {
                 case "edge": return new EdgeDriver();
+                case "chrome": return new ChromeDriver();
+
             }
         }
     }
