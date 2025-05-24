@@ -14,7 +14,10 @@ namespace TestAutomation.Test.PageObjetPattern.Factories
     {
         public static IWebDriver GetWebDriver(string browsername)
         {
-
+            switch (browsername)
+            {
+                case "edge": return new EdgeDriver();
+            }
         }
     }
 }
