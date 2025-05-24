@@ -12,6 +12,9 @@ namespace TestAutomation.Test.PageObjetPattern.Factories
 {
     public static class WebDriverFactory
     {
+        public static IWebDriver GetWebDriver(string browsername)
+        {
 
+        }
     }
 }
