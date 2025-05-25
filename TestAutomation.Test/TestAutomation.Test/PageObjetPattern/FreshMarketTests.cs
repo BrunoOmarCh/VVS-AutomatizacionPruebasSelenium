@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -9,16 +10,18 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using TestAutomation.Test.PageObjetPattern.Helpers;
 using TestAutomation.Test.PageObjetPattern.Models;
 using TestAutomation.Test.PageObjetPattern.PageObject.HomePage;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestAutomation.Test.PageObjetPattern
 {
-    public class FreshMarketTests
+    public class FreshMarketTests : TestBase
     {
-        #pragma warning disable NUnit1032
-        IWebDriver driver;
+#pragma warning disable NUnit1032
+        /* IWebDriver driver;
 
         [SetUp]
         public void SetUp()
@@ -35,6 +38,7 @@ namespace TestAutomation.Test.PageObjetPattern
         {
             driver.Quit();
         }
+        */
 
         /// <summary>
         /// Verify that the next provided fruits are displayed into the shop.
@@ -43,6 +47,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void VerifyThatFruitsAreCorrectlyDisplayed()
         {
+
             var expectedFruits = new List<FruitModel>
             {
                 new FruitModel("Apple", 2.50m, "Crispy and delicious apples from the orchard."),
@@ -97,6 +102,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
+
             var homePage = new HomePageObject(driver); // no retorna la pagina
             var foundFruits = homePage.SearchBar
                 .InputSearch("app")
@@ -123,23 +129,5 @@ namespace TestAutomation.Test.PageObjetPattern
             foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
         }
 
-        //Resumen
-        //Shoping Car Testing:
-        //1. Verificar que el Shoping car icon, de la parte superior derecha tiene numero 0
-        //2. Añadir 10 apples, 6 bananas, 5 Avocado y 1 Pomegranate al Shoping Car
-        //(para encontrar las frutas use la navegación por pagina). Verificar que
-        //el Shoping car icon, de la parte superior derecha tiene un numero 4
-        //3. Abra el Shoping car y verifique que el item 4 del paso anterior ha
-        //sido adicionado y que su valor es correcto.Verifique que la cantidad total es correcta.
-        //4. Remueva el Pomegrante.Verifique que la cantidad es 3 en el icono del Shoping Car.
-        //5. Actualizar la cantidad de bananas a 3. Verificar que el costo total es correcto.
-        //6. Cerrar el caroo de compra
-        [Test]
-        public void ShoppingCartTest()
-        {
-            //tarea 1. verificar que el icon de arriba es 0
-            var homePage = new HomePageObject(driver);
-            homePage.GetShoppingCartIconNumberOfItem().Should().Be(0);
-        }
-    }
+
 }
