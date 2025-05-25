@@ -48,6 +48,7 @@ namespace TestAutomation.Test.PageObjetPattern
         public void VerifyThatFruitsAreCorrectlyDisplayed()
         {
             using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
 
 
             var expectedFruits = new List<FruitModel>
