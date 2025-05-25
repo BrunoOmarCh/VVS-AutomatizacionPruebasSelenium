@@ -49,6 +49,8 @@ namespace TestAutomation.Test.PageObjetPattern
         {
             using UITestContext uiTestContext = new UITestContext();
             var driver = uiTestContext.Driver;
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 
 
             var expectedFruits = new List<FruitModel>
