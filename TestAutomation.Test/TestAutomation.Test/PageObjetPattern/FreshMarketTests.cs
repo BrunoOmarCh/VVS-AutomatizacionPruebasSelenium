@@ -51,7 +51,7 @@ namespace TestAutomation.Test.PageObjetPattern
             var driver = uiTestContext.Driver;
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-
+            driver.Url = "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
 
             var expectedFruits = new List<FruitModel>
             {
