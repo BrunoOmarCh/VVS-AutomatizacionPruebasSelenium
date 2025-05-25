@@ -19,7 +19,8 @@ namespace TestAutomation.Test.PageObjetPattern.Factories
                 case "edge": return new EdgeDriver();
                 case "chrome": return new ChromeDriver();
                 case "firefox": return new FirefoxDriver();
-
+                default:
+                    throw new NotSupportedException($"The browser {browsername} is not supported");
             }
         }
     }
