@@ -107,7 +107,8 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
-
+            using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
             var homePage = new HomePageObject(driver); // no retorna la pagina
             var foundFruits = homePage.SearchBar
                 .InputSearch("app")
