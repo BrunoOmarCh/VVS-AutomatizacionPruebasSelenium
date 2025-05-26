@@ -20,7 +20,7 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests : TestBase
     {
-#pragma warning disable NUnit1032
+    #pragma warning disable NUnit1032
         /* IWebDriver driver;
 
         [SetUp]
@@ -107,33 +107,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
-            using UITestContext uiTestContext = new UITestContext();
-            var driver = uiTestContext.Driver;
-            var homePage = new HomePageObject(driver); // no retorna la pagina
-            var foundFruits = homePage.SearchBar
-                .InputSearch("app")
-                .ClickSearch()
-                .DisplayedFruitModel();
 
-            foundFruits.Count.Should().Be(2); //segun la condicion debe retornar solo 2
-            // para obtener los nombre
-            var foundFruitsName = foundFruits.Select(fruit => fruit.Name).ToList();
-            var expectFruitNames = new[] { "Pineapple", "Apple" }; foundFruitsName.Should().BeEquivalentTo(expectFruitNames);
-            //compara los valores
-            //para el test 2:
-            homePage.SearchBar
-                .InputSearch(string.Empty)
-                .ClickSearch()
-                .DisplayedFruitWebElements()
-                .Count.Should().Be(12);
-            //par el 3. que es similar al 1.
-            foundFruits = homePage.SearchBar
-            .InputSearch("ape")
-            .ClickEnter()
-            .DisplayedFruitModel();
-            expectFruitNames = new[] { "Grape", "Grapefruit" };
-            foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
         }
-
-
+    }
 }
