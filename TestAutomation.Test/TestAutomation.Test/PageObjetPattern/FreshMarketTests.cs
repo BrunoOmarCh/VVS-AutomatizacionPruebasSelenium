@@ -107,6 +107,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
+            using UITestContext uiTestContext = new UITestContext();
 
         }
     }
