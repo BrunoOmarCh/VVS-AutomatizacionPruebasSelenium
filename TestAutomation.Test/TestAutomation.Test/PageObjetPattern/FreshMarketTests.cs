@@ -108,6 +108,7 @@ namespace TestAutomation.Test.PageObjetPattern
         public void SearchTests()
         {
             using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
 
         }
     }
