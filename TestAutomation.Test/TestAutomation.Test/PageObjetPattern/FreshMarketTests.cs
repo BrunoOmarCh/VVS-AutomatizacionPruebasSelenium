@@ -132,7 +132,7 @@ namespace TestAutomation.Test.PageObjetPattern
             .ClickEnter()
             .DisplayedFruitModel();
             expectFruitNames = new[] { "Grape", "Grapefruit" };
-
+            foundFruits.Select(fruit => fruit.Name).Should().BeEquivalentTo(expectFruitNames);
         }
 
     }
