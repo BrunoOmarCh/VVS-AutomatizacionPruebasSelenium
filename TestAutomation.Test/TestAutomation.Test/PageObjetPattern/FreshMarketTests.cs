@@ -116,6 +116,8 @@ namespace TestAutomation.Test.PageObjetPattern
                 .DisplayedFruitModel();
 
             foundFruits.Count.Should().Be(2); //segun la condicion debe retornar solo 2
+            // para obtener los nombre
+            var foundFruitsName = foundFruits.Select(fruit => fruit.Name).ToList();
 
         }
 
