@@ -131,6 +131,7 @@ namespace TestAutomation.Test.PageObjetPattern
             .InputSearch("ape")
             .ClickEnter()
             .DisplayedFruitModel();
+            expectFruitNames = new[] { "Grape", "Grapefruit" };
 
         }
 
