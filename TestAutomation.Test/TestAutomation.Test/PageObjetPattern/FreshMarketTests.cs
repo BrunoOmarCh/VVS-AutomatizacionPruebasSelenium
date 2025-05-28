@@ -153,6 +153,7 @@ namespace TestAutomation.Test.PageObjetPattern
             var driver = uiTestContext.Driver;
             //tarea 1. verificar que el icon de arriba es 0
             var homePage = new HomePageObject(driver);
+            homePage.IsShoppingCartIconNumberOfItems(0).Should().BeTrue();
 
 
 
