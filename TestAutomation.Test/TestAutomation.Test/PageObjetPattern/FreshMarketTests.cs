@@ -20,7 +20,7 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests : TestBase
     {
-    #pragma warning disable NUnit1032
+#pragma warning disable NUnit1032
         /* IWebDriver driver;
 
         [SetUp]
@@ -150,7 +150,10 @@ namespace TestAutomation.Test.PageObjetPattern
         public void ShoppingCartTest()
         {
             using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
+         
 
-        }
+
+
     }
 }
