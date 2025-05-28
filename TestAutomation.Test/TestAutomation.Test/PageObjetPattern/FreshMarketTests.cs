@@ -151,7 +151,9 @@ namespace TestAutomation.Test.PageObjetPattern
         {
             using UITestContext uiTestContext = new UITestContext();
             var driver = uiTestContext.Driver;
-         
+            //tarea 1. verificar que el icon de arriba es 0
+            var homePage = new HomePageObject(driver);
+
 
 
 
