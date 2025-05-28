@@ -154,6 +154,8 @@ namespace TestAutomation.Test.PageObjetPattern
             //tarea 1. verificar que el icon de arriba es 0
             var homePage = new HomePageObject(driver);
             homePage.IsShoppingCartIconNumberOfItems(0).Should().BeTrue();
+            var expectedFruitsInCart = new List<FruitModel>(); //define la lista de productos.
+            var DisplayedFruits = () => homePage.DisplayedFruitWebElements();
 
 
 
