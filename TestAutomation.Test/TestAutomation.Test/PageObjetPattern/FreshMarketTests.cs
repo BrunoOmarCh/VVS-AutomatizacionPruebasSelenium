@@ -149,6 +149,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void ShoppingCartTest()
         {
+            using UITestContext uiTestContext = new UITestContext();
 
         }
     }
