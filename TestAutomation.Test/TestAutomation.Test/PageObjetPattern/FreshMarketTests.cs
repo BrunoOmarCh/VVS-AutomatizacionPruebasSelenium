@@ -172,6 +172,7 @@ namespace TestAutomation.Test.PageObjetPattern
             element
             .InputQuantity(10)
             .ClickAddToCar();
+            expectedFruitsInCart.Add(FruitHelpers.Parse(element));//se adiciona a la lista.
 
              */
 
