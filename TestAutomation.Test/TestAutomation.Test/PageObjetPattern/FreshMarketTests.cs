@@ -164,7 +164,19 @@ namespace TestAutomation.Test.PageObjetPattern
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Avocado", 5));
             homePage.PageNavegation.ClickButtonPage3(); //estamos en pagina 3
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Pomegranate", 1));
+            //para verificar que el carro tiene numero 4
+            homePage.IsShoppingCartIconNumberOfItems(4).Should().BeTrue();
+            /*
+            // Tarea 2: +10apple, 6 bananas, 5 Avocado 1 Pomegranete..vericar el icon de shopping = 4
+            var element = homePage.DisplayedFruitWebElements().Single(fruit => fruit.Name.Equals("Apple"));
+            element
+            .InputQuantity(10)
+            .ClickAddToCar();
 
+             */
+
+
+        }
 
 
 
