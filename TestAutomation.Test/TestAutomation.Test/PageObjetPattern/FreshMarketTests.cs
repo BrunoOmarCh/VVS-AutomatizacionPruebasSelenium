@@ -159,6 +159,7 @@ namespace TestAutomation.Test.PageObjetPattern
 
             // Tarea 2: + 10apple, 6 bananas, 5 Avocado 1 Pomegranete.. vericar el icon de shopping=4
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Apple", 10));
+            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Banana", 6));
 
 
 
