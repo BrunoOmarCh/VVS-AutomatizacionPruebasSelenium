@@ -173,6 +173,12 @@ namespace TestAutomation.Test.PageObjetPattern
             .InputQuantity(10)
             .ClickAddToCar();
             expectedFruitsInCart.Add(FruitHelpers.Parse(element));//se adiciona a la lista.
+            //Bananas 6
+            element = homePage.DisplayedFruitWebElements().Single(fruit =>
+            fruit.Name.Equals("Banana"));
+            element
+                .InputQuantity(6) // add las 6 bananas
+                .ClickAddToCar();// pulsa click para anadir al carro.
 
              */
 
