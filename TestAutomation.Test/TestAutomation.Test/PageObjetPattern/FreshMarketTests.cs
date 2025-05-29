@@ -162,6 +162,7 @@ namespace TestAutomation.Test.PageObjetPattern
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Banana", 6));
             homePage.PageNavegation.ClickButtonPage2(); //estamos en pagina 2
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Avocado", 5));
+            homePage.PageNavegation.ClickButtonPage3(); //estamos en pagina 3
 
 
 
