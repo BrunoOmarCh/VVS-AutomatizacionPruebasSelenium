@@ -180,6 +180,13 @@ namespace TestAutomation.Test.PageObjetPattern
                 .InputQuantity(6) // add las 6 bananas
                 .ClickAddToCar();// pulsa click para anadir al carro.
             expectedFruitsInCart.Add(FruitHelpers.Parse(element));//se adiciona a la lista.
+            //Avocado 5. primero click para avanzar pagina
+            homePage.PageNavegation.ClickButtonPage2(); //estamos en pagina 2
+            element = homePage.DisplayedFruitWebElements().Single(fruit =>
+            fruit.Name.Equals("Avocado"));
+            element
+            .InputQuantity(5)
+            .ClickAddToCar();
 
              */
 
