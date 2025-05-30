@@ -195,7 +195,9 @@ namespace TestAutomation.Test.PageObjetPattern
             element
             .InputQuantity(1)
             .ClickAddToCar();
-
+            expectedFruitsInCart.Add(FruitHelpers.Parse(element));//se adiciona a la lista.
+            //para verificar que el carro tiene numero 4
+            homePage.IsShoppingCartIconNumberOfItems(4).Should().BeTrue();
              */
 
 
