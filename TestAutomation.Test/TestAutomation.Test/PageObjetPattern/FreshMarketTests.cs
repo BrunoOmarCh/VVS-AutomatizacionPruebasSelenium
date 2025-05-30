@@ -190,6 +190,11 @@ namespace TestAutomation.Test.PageObjetPattern
             expectedFruitsInCart.Add(FruitHelpers.Parse(element));//se adiciona a la lista.
             //Pomegranate
             homePage.PageNavegation.ClickButtonPage3(); //estamos en pagina 3
+            element = homePage.DisplayedFruitWebElements().Single(fruit =>
+            fruit.Name.Equals("Pomegranate"));
+            element
+            .InputQuantity(1)
+            .ClickAddToCar();
 
              */
 
