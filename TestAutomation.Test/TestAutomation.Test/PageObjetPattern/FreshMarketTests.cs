@@ -201,6 +201,10 @@ namespace TestAutomation.Test.PageObjetPattern
              */
 
 
+
+            //Test 3: Abrir el carro, verificar que tiene 4 elementos y sus valores son correctos
+            var cart = homePage.ClickShoppingCartIcon(); //abre el carrito
+
         }
 
 
