@@ -206,6 +206,9 @@ namespace TestAutomation.Test.PageObjetPattern
             var cart = homePage.ClickShoppingCartIcon(); //abre el carrito
             cart.CartItemWebElements.Count().Should().Be(4);//comprueba 4 elementos en el carro
             var item = () => cart.CartItemWebElements;
+            //var cartItemText = item.ElementAt(0).GetText();
+            //var fruit = expectedFruitsInCart[0];
+            //item.ElementAt(0).GetText().Should().Be($"{fruit.Name} {fruit.Price}€/Kg");
 
         }
 
