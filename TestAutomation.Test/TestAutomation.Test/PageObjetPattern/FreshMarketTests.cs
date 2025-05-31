@@ -213,6 +213,8 @@ namespace TestAutomation.Test.PageObjetPattern
             {
                 var fruit = expectedFruitsInCart[i];
                 item().ElementAt(i).GetText().Should().Be($"{fruit.Name} {fruit.Price} €/Kg");
+                fruit.Quantity.Should().Be(item().ElementAt(i).GetQuantity());
+            }
 
         }
 
