@@ -209,6 +209,9 @@ namespace TestAutomation.Test.PageObjetPattern
             //var cartItemText = item.ElementAt(0).GetText();
             //var fruit = expectedFruitsInCart[0];
             //item.ElementAt(0).GetText().Should().Be($"{fruit.Name} {fruit.Price}€/Kg");
+            for (var i = 0; i < 4; i++)
+            {
+                var fruit = expectedFruitsInCart[i];
 
         }
 
