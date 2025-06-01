@@ -221,6 +221,8 @@ namespace TestAutomation.Test.PageObjetPattern
             item().ElementAt(3).ClickButtonRemove();// borra
             homePage.IsShoppingCartIconNumberOfItems(3).Should().BeTrue(); //el numero del icon de carro es 3
             item().ElementAt(1).InputQuantity(3); // se actualiza bananas a 3
+            var totalPrice = cart.GetTotalPrice();
+            var totalPriceFromItems = cart.GetTotalPriceFromItems();
 
         }
 
