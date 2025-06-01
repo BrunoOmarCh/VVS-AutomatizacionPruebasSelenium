@@ -223,6 +223,7 @@ namespace TestAutomation.Test.PageObjetPattern
             item().ElementAt(1).InputQuantity(3); // se actualiza bananas a 3
             var totalPrice = cart.GetTotalPrice();
             var totalPriceFromItems = cart.GetTotalPriceFromItems();
+            cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems()); //se verifica total son igiales
 
         }
 
