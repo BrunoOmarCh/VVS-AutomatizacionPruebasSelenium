@@ -215,6 +215,8 @@ namespace TestAutomation.Test.PageObjetPattern
                 item().ElementAt(i).GetText().Should().Be($"{fruit.Name} {fruit.Price} €/Kg");
                 fruit.Quantity.Should().Be(item().ElementAt(i).GetQuantity());
             }
+            //para porbar que los totales son iguales
+            cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems());
 
         }
 
