@@ -217,6 +217,8 @@ namespace TestAutomation.Test.PageObjetPattern
             }
             //para porbar que los totales son iguales
             cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems());
+            //borrar la granada
+            item().ElementAt(3).ClickButtonRemove();// borra
 
         }
 
