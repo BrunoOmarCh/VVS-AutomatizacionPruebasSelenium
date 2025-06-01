@@ -219,6 +219,7 @@ namespace TestAutomation.Test.PageObjetPattern
             cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems());
             //borrar la granada
             item().ElementAt(3).ClickButtonRemove();// borra
+            homePage.IsShoppingCartIconNumberOfItems(3).Should().BeTrue(); //el numero del icon de carro es 3
 
         }
 
