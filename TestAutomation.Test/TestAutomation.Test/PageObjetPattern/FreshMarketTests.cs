@@ -224,6 +224,7 @@ namespace TestAutomation.Test.PageObjetPattern
             var totalPrice = cart.GetTotalPrice();
             var totalPriceFromItems = cart.GetTotalPriceFromItems();
             cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems()); //se verifica total son igiales
+            cart.ClickButtonClose(); // clic sobre booton Close.
 
         }
 
