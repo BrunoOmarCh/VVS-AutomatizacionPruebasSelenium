@@ -242,6 +242,7 @@ namespace TestAutomation.Test.PageObjetPattern
             var driver = uiTestContext.Driver;
             var homePage = new HomePageObject(driver);  //1
             var contactUsForm = homePage.clickContactUs(); //2
+            contactUsForm.ClickSumit(); //3
 
         }
 
