@@ -243,6 +243,8 @@ namespace TestAutomation.Test.PageObjetPattern
             var homePage = new HomePageObject(driver);  //1
             var contactUsForm = homePage.clickContactUs(); //2
             contactUsForm.ClickSumit(); //3
+            //4.3.3
+            contactUsForm.GetDisplayedTitleErrorMessage().Should().Be("Please enter a title");
 
         }
 
