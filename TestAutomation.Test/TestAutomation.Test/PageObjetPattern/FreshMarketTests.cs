@@ -239,6 +239,7 @@ namespace TestAutomation.Test.PageObjetPattern
         public void ContactUsTest()
         {
             using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
 
         }
 
