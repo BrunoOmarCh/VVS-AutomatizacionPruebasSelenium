@@ -238,6 +238,7 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void ContactUsTest()
         {
+            using UITestContext uiTestContext = new UITestContext();
 
         }
 
