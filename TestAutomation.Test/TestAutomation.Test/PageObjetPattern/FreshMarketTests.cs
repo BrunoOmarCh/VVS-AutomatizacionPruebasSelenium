@@ -247,6 +247,9 @@ namespace TestAutomation.Test.PageObjetPattern
             contactUsForm.GetDisplayedTitleErrorMessage().Should().Be("Please enter a title");
             contactUsForm.GetDisplayedEmailErrorMessage().Should().Be("Please enter a valid email address");
             contactUsForm.GetDisplayedTextErrorMessage().Should().Be("Please enter a message");
+            //4.4.2
+            contactUsForm.GetCategoryOptions().Should().BeEquivalentTo(new[] {
+                "Search Information", "Career query", "Fruit enquiry", "Improvements", "Other" });
 
         }
 
