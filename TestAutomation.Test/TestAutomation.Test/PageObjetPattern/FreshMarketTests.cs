@@ -250,6 +250,11 @@ namespace TestAutomation.Test.PageObjetPattern
             //4.4.2
             contactUsForm.GetCategoryOptions().Should().BeEquivalentTo(new[] {
                 "Search Information", "Career query", "Fruit enquiry", "Improvements", "Other" });
+            //4.5.2 Ingresar datos válidos en el formulario y enviar
+            contactUsForm
+                .InputTextContactTitle("Jose")
+                .InputTextContactEmail("aespinozar@unmsm.edu.pe")
+                .InputTextContactMessage("This is my Message").ClickSumit();
 
         }
 
