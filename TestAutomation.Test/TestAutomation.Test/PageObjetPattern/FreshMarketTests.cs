@@ -255,6 +255,8 @@ namespace TestAutomation.Test.PageObjetPattern
                 .InputTextContactTitle("Jose")
                 .InputTextContactEmail("aespinozar@unmsm.edu.pe")
                 .InputTextContactMessage("This is my Message").ClickSumit();
+            //4.6 Validar alerta de éxito 
+            var alert = driver.SwitchTo().Alert();
 
         }
 
