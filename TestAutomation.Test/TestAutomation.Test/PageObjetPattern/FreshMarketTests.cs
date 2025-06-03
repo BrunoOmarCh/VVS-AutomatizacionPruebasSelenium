@@ -257,6 +257,7 @@ namespace TestAutomation.Test.PageObjetPattern
                 .InputTextContactMessage("This is my Message").ClickSumit();
             //4.6 Validar alerta de éxito 
             var alert = driver.SwitchTo().Alert();
+            alert.Text.Should().Be("Form submitted successfully!");
 
         }
 
