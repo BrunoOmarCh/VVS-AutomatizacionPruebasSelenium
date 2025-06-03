@@ -258,6 +258,7 @@ namespace TestAutomation.Test.PageObjetPattern
             //4.6 Validar alerta de éxito 
             var alert = driver.SwitchTo().Alert();
             alert.Text.Should().Be("Form submitted successfully!");
+            alert.Accept();
 
         }
 
