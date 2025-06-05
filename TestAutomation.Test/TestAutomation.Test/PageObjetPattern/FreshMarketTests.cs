@@ -261,6 +261,9 @@ namespace TestAutomation.Test.PageObjetPattern
             alert.Accept();
 
         }
+        private FruitModel AddItemToCart(IList<FruitWebElement> displayedFruits, string fruitName, int quantity)
+        {
 
+        }
     }
 }
