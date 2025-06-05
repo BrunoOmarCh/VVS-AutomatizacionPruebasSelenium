@@ -263,6 +263,7 @@ namespace TestAutomation.Test.PageObjetPattern
         }
         private FruitModel AddItemToCart(IList<FruitWebElement> displayedFruits, string fruitName, int quantity)
         {
+            var fruitWebElement = displayedFruits.Single(fruit => fruit.Name.Equals(fruitName));
 
         }
     }
