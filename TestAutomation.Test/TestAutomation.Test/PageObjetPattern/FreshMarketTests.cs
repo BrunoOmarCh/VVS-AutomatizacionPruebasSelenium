@@ -268,6 +268,7 @@ namespace TestAutomation.Test.PageObjetPattern
             .InputQuantity(quantity)
             .ClickAddToCar();
             var fruitModel = FruitHelpers.Parse(fruitWebElement);
+            fruitModel.Quantity = quantity;
 
         }
     }
