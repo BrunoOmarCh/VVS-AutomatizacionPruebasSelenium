@@ -20,6 +20,7 @@ namespace TestAutomation.Test.VRP.Helpers
         {
             //Driver = new ChromeDriver(); 
             Driver = WebDriverFactory.GetWebDriver(TestBase.TestSettings.Browser.ToLower());
+            Driver.Manage().Window.Maximize();
 
         }
 
