@@ -18,6 +18,8 @@ namespace TestAutomation.Test.VRP.Helpers
         public IWebDriver Driver { get; set; }
         public UITestContextVRP()
         {
+            //Driver = new ChromeDriver(); 
+            Driver = WebDriverFactory.GetWebDriver(TestBase.TestSettings.Browser.ToLower());
 
         }
 
