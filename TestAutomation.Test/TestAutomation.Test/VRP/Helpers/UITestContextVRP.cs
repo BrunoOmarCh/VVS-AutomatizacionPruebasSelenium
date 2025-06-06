@@ -16,6 +16,10 @@ namespace TestAutomation.Test.VRP.Helpers
         //y ponerlos a disposición cuando se demanden.
         //se maximiza, se carga el ImplicitWait y se navega a tu URL base.
         public IWebDriver Driver { get; set; }
-        
+        public UITestContextVRP()
+        {
+
+        }
+
     }
 }
