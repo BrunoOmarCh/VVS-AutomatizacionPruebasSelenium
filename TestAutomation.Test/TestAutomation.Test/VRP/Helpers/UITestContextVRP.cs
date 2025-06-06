@@ -10,7 +10,7 @@ using TestAutomation.Test.PageObjetPattern;
 
 namespace TestAutomation.Test.VRP.Helpers
 {
-    internal class UITestContextVRP
+    public class UITestContextVRP
     {
     }
 }
