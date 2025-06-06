@@ -12,5 +12,10 @@ namespace TestAutomation.Test.VRP.Helpers
 {
     public class UITestContextVRP
     {
+        //esta clase se encargara de crear los drivers
+        //y ponerlos a disposición cuando se demanden.
+        //se maximiza, se carga el ImplicitWait y se navega a tu URL base.
+        public IWebDriver Driver { get; set; }
+        
     }
 }
