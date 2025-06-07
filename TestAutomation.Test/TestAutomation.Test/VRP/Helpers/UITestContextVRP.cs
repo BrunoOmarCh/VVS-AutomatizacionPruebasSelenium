@@ -25,7 +25,8 @@ namespace TestAutomation.Test.VRP.Helpers
             //por la variable definida en el archivo json:
             Driver.Manage().Timeouts().ImplicitWait =
             TimeSpan.FromSeconds(TestBase.TestSettings.WaitTimeout);
-
+            Driver.Url =
+            "http://localhost:5173/";
         }
 
     }
