@@ -28,6 +28,9 @@ namespace TestAutomation.Test.VRP.Helpers
             Driver.Url =
             "http://localhost:5173/";
         }
-
+        public void Dispose()
+        {
+            Driver.Dispose();
+        }
     }
 }
