@@ -21,6 +21,10 @@ namespace TestAutomation.Test.VRP.Helpers
             //Driver = new ChromeDriver(); 
             Driver = WebDriverFactory.GetWebDriver(TestBase.TestSettings.Browser.ToLower());
             Driver.Manage().Window.Maximize();
+            //Como ve, aque el timeout esta como 3, y debe ser cambiado
+            //por la variable definida en el archivo json:
+            Driver.Manage().Timeouts().ImplicitWait =
+            TimeSpan.FromSeconds(TestBase.TestSettings.WaitTimeout);
 
         }
 
