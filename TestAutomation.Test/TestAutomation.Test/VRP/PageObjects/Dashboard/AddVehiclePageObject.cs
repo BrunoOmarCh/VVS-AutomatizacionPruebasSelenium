@@ -47,5 +47,7 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             return this;
         }
 
+        // ------------ métodos públicos fluidos -------------
+        public AddVehiclePageObject SelectFirstMarca() => SelectFirst("marca");
     }
 }
