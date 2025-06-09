@@ -16,6 +16,7 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
     {
         private readonly IWebDriver driver;
         private readonly int timeoutMs = 10000;
+        public AddVehiclePageObject(IWebDriver driver) => this.driver = driver;
 
     }
 }
