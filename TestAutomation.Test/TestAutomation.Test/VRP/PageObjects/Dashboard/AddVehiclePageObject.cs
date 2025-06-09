@@ -30,7 +30,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             {
                 var container = btn.FindElement(By.XPath("./following-sibling::div[contains(@class,'select-content')]"));
 
-                
+                var items = container.FindElements(By.CssSelector(".select-item")).Where(e => e.Displayed).ToList();
+
+
             return this;
         }
 
