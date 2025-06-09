@@ -21,6 +21,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         // ---------------- dropdown helper ----------------
         private AddVehiclePageObject SelectFirst(string labelFor)
         {
+            // 1. abrir lista
+            var btn = driver.FindElement(By.CssSelector($"label[for='{labelFor}'] + .custom-select .select-button"));
+            btn.Click();
 
     }
 }
