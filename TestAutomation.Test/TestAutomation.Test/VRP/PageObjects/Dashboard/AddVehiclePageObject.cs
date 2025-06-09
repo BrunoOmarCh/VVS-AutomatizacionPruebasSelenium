@@ -18,5 +18,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         private readonly int timeoutMs = 10000;
         public AddVehiclePageObject(IWebDriver driver) => this.driver = driver;
 
+        // ---------------- dropdown helper ----------------
+        private AddVehiclePageObject SelectFirst(string labelFor)
+        {
+
     }
 }
