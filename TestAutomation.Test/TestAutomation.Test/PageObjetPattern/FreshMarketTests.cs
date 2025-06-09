@@ -216,6 +216,30 @@ namespace TestAutomation.Test.PageObjetPattern
             cart.ClickButtonClose(); // clic sobre booton Close.
 
         }
+
+        // resumen de 4to test
+        //1.Abrir el Fresh Market.
+        //2.Click en el botón "Contact Us"
+        //3. Click en el botón "Submit". Verificar que 3 mensajes de error son mostrados con sus valores
+        //4. Verifique que el desplegable "Categoria" contiene 5 opciones, que se pueden ver en la IU.
+        //5.Ingrese valores validos en todos los campos y pulse "Submit". Verifique que una aleta se muestra con el mensaje "Form submitted successfully"
+        //6. Click al boton "Accept" dentro del alerta.
+        [Test]
+        public void ContactUsTest()
+        {
+            var homePage = new HomePageObject(driver);  //1
+            var contactUsForm = homePage.clickContactUs(); //2
+            contactUsForm.ClickSumit(); //3
+            //4.3.3
+            contactUsForm.GetDisplayedTitleErrorMessage().Should().Be("Please enter a title");
+            contactUsForm.GetDisplayedEmailErrorMessage().Should().Be("Please enter a valid email address");
+            contactUsForm.GetDisplayedTextErrorMessage().Should().Be("Please enter a message");
+            //4.4.2
+            contactUsForm.GetCategoryOptions().Should().BeEquivalentTo(new[] { 
+                "Search Information", "Career query", "Fruit enquiry", "Improvements", "Other" });
+
+
+        }
         private FruitModel AddItemToCart(IList<FruitWebElement> displayedFruits, string fruitName, int quantity)
         {
             var fruitWebElement = displayedFruits.Single(fruit => fruit.Name.Equals(fruitName));

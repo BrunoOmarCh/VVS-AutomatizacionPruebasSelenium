@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TestAutomation.Test.PageObjetPattern.Helpers;
 using TestAutomation.Test.PageObjetPattern.Models;
+using TestAutomation.Test.PageObjetPattern.PageObject.ContacUs;
 using TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart;
 
 
@@ -66,5 +68,14 @@ namespace TestAutomation.Test.PageObjetPattern.PageObject.HomePage
             ShoppingCartIcon.Click(); 
             return new ShoppingCartPageObject(driver);
         }
+        //para el 4to test
+        //4.1.1 
+       private IWebElement ButtonContactUs => driver.FindElement(By.Id("openContactPopup"));
+        //4.2.2
+        public ContactUsPageObject clickContactUs()
+       {
+            ButtonContactUs.Click();
+            return new ContactUsPageObject(driver);
+       }
     }
 }
