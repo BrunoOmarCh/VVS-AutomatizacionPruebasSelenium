@@ -33,7 +33,15 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
                 var items = container.FindElements(By.CssSelector(".select-item")).Where(e => e.Displayed).ToList();
                 if (!items.Any()) return false;
 
-
+                try
+                {
+                    items.First().Click();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }, timeoutMs);
 
             return this;
