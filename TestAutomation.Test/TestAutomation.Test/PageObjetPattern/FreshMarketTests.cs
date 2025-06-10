@@ -18,7 +18,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TestAutomation.Test.PageObjetPattern
 {
-    public class FreshMarketTests
+    public class FreshMarketTests : TestBase
     {
 #pragma warning disable NUnit1032
         IWebDriver driver;
