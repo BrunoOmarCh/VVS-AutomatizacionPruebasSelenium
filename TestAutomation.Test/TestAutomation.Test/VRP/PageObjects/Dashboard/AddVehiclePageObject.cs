@@ -52,5 +52,12 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         public AddVehiclePageObject SelectFirstModelo() => SelectFirst("modelo");
         public AddVehiclePageObject SelectFirstColor() => SelectFirst("color");
         public AddVehiclePageObject SelectFirstSoat() => SelectFirst("soat");
-    }
+
+        public AddVehiclePageObject EnterAnoFabricacion(int year)
+        {
+            var el = driver.FindElement(By.Id("año_fabricacion"));
+            el.Clear(); el.SendKeys(year.ToString());
+            return this;
+        }
+            }
 }
