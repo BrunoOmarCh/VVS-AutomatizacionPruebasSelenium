@@ -51,5 +51,6 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         public AddVehiclePageObject SelectFirstMarca() => SelectFirst("marca");
         public AddVehiclePageObject SelectFirstModelo() => SelectFirst("modelo");
         public AddVehiclePageObject SelectFirstColor() => SelectFirst("color");
+        public AddVehiclePageObject SelectFirstSoat() => SelectFirst("soat");
     }
 }
