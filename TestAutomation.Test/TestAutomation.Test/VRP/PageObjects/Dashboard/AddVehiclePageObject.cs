@@ -59,5 +59,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             el.Clear(); el.SendKeys(year.ToString());
             return this;
         }
+        public AddVehiclePageObject EnterPlaca(string placa)
+        {
+            var el = driver.FindElement(By.CssSelector("input[name='placa']"));
+            el.Clear(); el.SendKeys(placa);
+            return this;
+        }
             }
 }
