@@ -65,5 +65,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             el.Clear(); el.SendKeys(placa);
             return this;
         }
+        public AddVehiclePageObject EnterMaxRecorrido(int m)
+        {
+            var el = driver.FindElement(By.Id("maximo_recorrido"));
+            el.Clear(); el.SendKeys(m.ToString());
+            return this;
+        }
             }
 }
