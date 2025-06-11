@@ -71,5 +71,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             el.Clear(); el.SendKeys(m.ToString());
             return this;
         }
+        public AddVehiclePageObject EnterMaxCapacidad(int m3)
+        {
+            var el = driver.FindElement(By.Id("maxima_capacidad"));
+            el.Clear(); el.SendKeys(m3.ToString());
+            return this;
+        }
             }
 }
