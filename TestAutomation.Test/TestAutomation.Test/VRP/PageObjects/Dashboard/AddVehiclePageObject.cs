@@ -77,5 +77,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             el.Clear(); el.SendKeys(m3.ToString());
             return this;
         }
-            }
+        public void ClickSave()
+        {
+            var save = driver.FindElement(By.CssSelector("button[type='submit']"));
+            WaitHelper.WaitForCondition(() => save.Enabled, timeoutMs);
+            save.Click();
+        }
+    }
 }
