@@ -9,7 +9,7 @@ using TestAutomation.Test.PageObjetPattern.Models;
 
 namespace TestAutomation.Test.VRP.PageObjects.Dashboard
 {
-    internal class DashboardPageObject
+    public class DashboardPageObject
     {
     }
 }
