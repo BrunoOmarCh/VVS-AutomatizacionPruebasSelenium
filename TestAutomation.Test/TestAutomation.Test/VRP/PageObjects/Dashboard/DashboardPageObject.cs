@@ -22,5 +22,15 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             this.driver = driver;
         }
 
+        /// <summary>
+        /// Hace click en “Flota” y devuelve el PageObject de la vista Flota.
+        /// </summary>
+        public FleetPageObject ClickFlota()
+        {
+            WaitHelper.WaitForCondition(() =>
+                driver.FindElement(FlotaLink).Displayed, timeoutMs);
+            driver.FindElement(FlotaLink).Click();
+            return new FleetPageObject(driver);
+        }
     }
 }
