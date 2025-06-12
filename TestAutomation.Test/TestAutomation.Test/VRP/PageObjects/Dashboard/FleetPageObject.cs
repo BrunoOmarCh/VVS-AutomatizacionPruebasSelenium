@@ -14,5 +14,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         private readonly IWebDriver driver;
         private readonly int timeoutMs = 10000;
 
+        // Selector más específico dentro de panelCRUD_options
+        private By AddVehicleBtn =>
+            By.XPath("//button[./div/p[normalize-space()='Agregar Vehículo'] or normalize-space()='Agregar Vehículo']");
+
     }
 }
