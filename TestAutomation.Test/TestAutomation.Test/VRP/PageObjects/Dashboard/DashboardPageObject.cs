@@ -14,5 +14,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         private readonly IWebDriver driver;
         private readonly int timeoutMs = 10000;
 
+        // Localizador “Flota”
+        private By FlotaLink => By.CssSelector(".headerBox_link[href='/dashboard/flotas/vehiculos']");
+
+
     }
 }
