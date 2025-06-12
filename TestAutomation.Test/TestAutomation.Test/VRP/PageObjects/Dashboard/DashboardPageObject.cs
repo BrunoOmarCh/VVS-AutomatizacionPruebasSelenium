@@ -17,6 +17,10 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         // Localizador “Flota”
         private By FlotaLink => By.CssSelector(".headerBox_link[href='/dashboard/flotas/vehiculos']");
 
+        public DashboardPageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
 
     }
 }
