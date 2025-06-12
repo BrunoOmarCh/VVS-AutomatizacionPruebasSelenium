@@ -18,5 +18,10 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         private By AddVehicleBtn =>
             By.XPath("//button[./div/p[normalize-space()='Agregar Vehículo'] or normalize-space()='Agregar Vehículo']");
 
+        public FleetPageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
     }
 }
