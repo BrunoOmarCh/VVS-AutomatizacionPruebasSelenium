@@ -34,5 +34,22 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
                 timeoutMs
             );
 
+            // Re‑buscar el botón en cada iteración para evitar "stale"
+            WaitHelper.WaitForCondition(() =>
+            {
+                var buttons = driver.FindElements(AddVehicleBtn);
+                if (!buttons.Any()) return false;
+                try
+                {
+                    buttons.First().Click();
+                    return true;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    return false;  // reintentar
+                }
+            }, timeoutMs);
+
+
     }
 }
