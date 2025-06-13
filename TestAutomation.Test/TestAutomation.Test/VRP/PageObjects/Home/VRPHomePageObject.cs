@@ -12,7 +12,9 @@ using TestAutomation.Test.VRP.PageObjects.Login;
 
 namespace TestAutomation.Test.VRP.PageObjects.Home
 {
-    internal class VRPHomePageObject
+    public class VRPHomePageObject
     {
+        private readonly IWebDriver driver;
+
     }
 }
