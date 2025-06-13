@@ -23,5 +23,9 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
             this.driver = driver;
         }
 
+        /// <summary>
+        /// Hace click en "Agregar Vehículo" y devuelve el formulario asociado.
+        /// </summary>
+
     }
 }
