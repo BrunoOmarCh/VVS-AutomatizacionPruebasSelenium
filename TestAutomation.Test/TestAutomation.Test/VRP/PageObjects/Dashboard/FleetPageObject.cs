@@ -26,6 +26,8 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         /// <summary>
         /// Hace click en "Agregar Vehículo" y devuelve el formulario asociado.
         /// </summary>
+        public AddVehiclePageObject ClickAddVehicle()
+        {
 
     }
 }
