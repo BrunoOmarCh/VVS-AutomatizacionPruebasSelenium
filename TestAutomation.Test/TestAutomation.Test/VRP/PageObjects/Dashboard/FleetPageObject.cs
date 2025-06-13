@@ -28,6 +28,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
         /// </summary>
         public AddVehiclePageObject ClickAddVehicle()
         {
+            // Esperar a que la URL correcta esté cargada
+            WaitHelper.WaitForCondition(
+                () => driver.Url.Contains("/dashboard/flotas/vehiculos"),
+                timeoutMs
+            );
 
     }
 }
