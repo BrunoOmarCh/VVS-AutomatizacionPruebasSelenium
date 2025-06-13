@@ -16,6 +16,10 @@ namespace TestAutomation.Test.VRP.PageObjects.Home
     {
         private readonly IWebDriver driver;
         private IWebElement SubmitButton => driver.FindElement(By.CssSelector(".formBox_button"));
+        public VRPHomePageObject(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
 
     }
 }
