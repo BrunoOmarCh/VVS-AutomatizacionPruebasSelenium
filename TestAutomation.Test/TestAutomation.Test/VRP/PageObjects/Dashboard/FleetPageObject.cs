@@ -50,6 +50,7 @@ namespace TestAutomation.Test.VRP.PageObjects.Dashboard
                 }
             }, timeoutMs);
 
-
+            return new AddVehiclePageObject(driver);
+        }
     }
 }
