@@ -1,8 +1,14 @@
-﻿using System;
+﻿using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestAutomation.Test.PageObjetPattern.Helpers;
+using TestAutomation.Test.PageObjetPattern.PageObject.ShoppingCart;
+using TestAutomation.Test.VRP.PageObjects.Login;
+
 
 namespace TestAutomation.Test.VRP.PageObjects.Home
 {
