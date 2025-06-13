@@ -20,6 +20,11 @@ namespace TestAutomation.Test.VRP.PageObjects.Home
         {
             this.driver = driver;
         }
-
+        //para acceder al login        
+        public LoginPageObject ClickSubmitButton()
+        {
+            SubmitButton.Click();
+            return new LoginPageObject(driver);
+        }
     }
 }
