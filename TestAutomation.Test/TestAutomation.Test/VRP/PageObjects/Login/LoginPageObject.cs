@@ -36,5 +36,17 @@ namespace TestAutomation.Test.VRP.PageObjects.Login
             return this;
         }
 
+        public LoginPageObject EnterPassword(string password)
+        {
+            WaitHelper.WaitForCondition(
+                () => driver.FindElement(PasswordInput).Displayed,
+                timeoutMs
+            );
+            var e = driver.FindElement(PasswordInput);
+            e.Clear();
+            e.SendKeys(password);
+            return this;
+        }
+
     }
 }
