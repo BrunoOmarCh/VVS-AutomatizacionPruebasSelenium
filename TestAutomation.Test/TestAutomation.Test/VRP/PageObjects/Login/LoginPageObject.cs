@@ -8,7 +8,7 @@ using TestAutomation.Test.PageObjetPattern.Helpers;
 
 namespace TestAutomation.Test.VRP.PageObjects.Login
 {
-    internal class LoginPageObject
+    public class LoginPageObject
     {
     }
 }
