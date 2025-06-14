@@ -48,5 +48,15 @@ namespace TestAutomation.Test.VRP.PageObjects.Login
             return this;
         }
 
+        public LoginPageObject ClickLogin()
+        {
+            WaitHelper.WaitForCondition(
+                () => driver.FindElement(LoginButton).Enabled,
+                timeoutMs
+            );
+            driver.FindElement(LoginButton).Click();
+            return this;
+        }
+
     }
 }
