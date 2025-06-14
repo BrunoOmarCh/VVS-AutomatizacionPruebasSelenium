@@ -24,5 +24,17 @@ namespace TestAutomation.Test.VRP.PageObjects.Login
             this.driver = driver;
         }
 
+        public LoginPageObject EnterEmail(string email)
+        {
+            WaitHelper.WaitForCondition(
+                () => driver.FindElement(EmailInput).Displayed,
+                timeoutMs
+            );
+            var e = driver.FindElement(EmailInput);
+            e.Clear();
+            e.SendKeys(email);
+            return this;
+        }
+
     }
 }
