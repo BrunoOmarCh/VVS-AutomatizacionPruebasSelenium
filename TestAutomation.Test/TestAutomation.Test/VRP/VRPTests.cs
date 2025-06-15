@@ -15,6 +15,14 @@ namespace TestAutomation.Test.VRP
     public class VRPTests : TestBase
     {
     #pragma warning disable NUnit1032
+        // LoginTests
+        // 1) Click en "Ingresar"
+        // 2) Rellenar
+        // 3) Enviar
+        // 4) Verificar redirección al dashboard
+        [Test]
+        public void LoginTests()
+        {
 
     }
 }
