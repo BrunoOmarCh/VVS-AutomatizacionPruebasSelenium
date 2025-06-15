@@ -10,7 +10,7 @@ using TestAutomation.Test.PageObjetPattern;
 
 namespace TestAutomation.Test.VRP.Helpers
 {
-    public class UITestContextVRP
+    public class UITestContextVRP : IDisposable
     {
         //esta clase se encargara de crear los drivers
         //y ponerlos a disposición cuando se demanden.
