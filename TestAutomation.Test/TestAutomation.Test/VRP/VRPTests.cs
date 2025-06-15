@@ -14,5 +14,7 @@ namespace TestAutomation.Test.VRP
 {
     public class VRPTests : TestBase
     {
+    #pragma warning disable NUnit1032
+
     }
 }
