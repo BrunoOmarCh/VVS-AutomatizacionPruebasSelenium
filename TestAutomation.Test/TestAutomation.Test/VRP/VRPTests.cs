@@ -12,7 +12,7 @@ using TestAutomation.Test.VRP.PageObjects.Home;
 
 namespace TestAutomation.Test.VRP
 {
-    internal class VRPTests
+    public class VRPTests : TestBase
     {
     }
 }
