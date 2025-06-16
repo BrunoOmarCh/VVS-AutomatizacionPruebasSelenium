@@ -20,8 +20,8 @@ namespace TestAutomation.Test.PageObjetPattern
 {
     public class FreshMarketTests : TestBase
     {
-#pragma warning disable NUnit1032
-        IWebDriver driver;
+    #pragma warning disable NUnit1032
+        /* IWebDriver driver;
 
         [SetUp]
         public void SetUp()
@@ -38,6 +38,7 @@ namespace TestAutomation.Test.PageObjetPattern
         {
             driver.Quit();
         }
+        */
 
         /// <summary>
         /// Verify that the next provided fruits are displayed into the shop.
@@ -46,6 +47,12 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void VerifyThatFruitsAreCorrectlyDisplayed()
         {
+            using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
+            driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+            driver.Url = "https://curso.testautomation.es/FruitVegetablesShopWeb/index.html";
+
             var expectedFruits = new List<FruitModel>
             {
                 new FruitModel("Apple", 2.50m, "Crispy and delicious apples from the orchard."),
@@ -100,6 +107,8 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void SearchTests()
         {
+            using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
             var homePage = new HomePageObject(driver); // no retorna la pagina
             var foundFruits = homePage.SearchBar
                 .InputSearch("app")
@@ -140,17 +149,19 @@ namespace TestAutomation.Test.PageObjetPattern
         [Test]
         public void ShoppingCartTest()
         {
+            using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
             //tarea 1. verificar que el icon de arriba es 0
             var homePage = new HomePageObject(driver);
             homePage.IsShoppingCartIconNumberOfItems(0).Should().BeTrue();
             var expectedFruitsInCart = new List<FruitModel>(); //define la lista de productos.
-            var DisplayedFruits = () => homePage.DisplayedFruitWebElements(); 
-            
+            var DisplayedFruits = () => homePage.DisplayedFruitWebElements();
+
             // Tarea 2: + 10apple, 6 bananas, 5 Avocado 1 Pomegranete.. vericar el icon de shopping=4
-            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Apple",10)); 
-            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Banana", 6)); 
+            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Apple", 10));
+            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Banana", 6));
             homePage.PageNavegation.ClickButtonPage2(); //estamos en pagina 2
-            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Avocado", 5)); 
+            expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Avocado", 5));
             homePage.PageNavegation.ClickButtonPage3(); //estamos en pagina 3
             expectedFruitsInCart.Add(AddItemToCart(DisplayedFruits(), "Pomegranate", 1));
             //para verificar que el carro tiene numero 4
@@ -201,7 +212,7 @@ namespace TestAutomation.Test.PageObjetPattern
             for (var i = 0; i < 4; i++)
             {
                 var fruit = expectedFruitsInCart[i];
-                item().ElementAt(i).GetText().Should().Be($"{fruit.Name} {fruit.Price} €/Kg"); 
+                item().ElementAt(i).GetText().Should().Be($"{fruit.Name} {fruit.Price} €/Kg");
                 fruit.Quantity.Should().Be(item().ElementAt(i).GetQuantity());
             }
             //para porbar que los totales son iguales
@@ -214,6 +225,40 @@ namespace TestAutomation.Test.PageObjetPattern
             var totalPriceFromItems = cart.GetTotalPriceFromItems();
             cart.GetTotalPrice().Should().Be(cart.GetTotalPriceFromItems()); //se verifica total son igiales
             cart.ClickButtonClose(); // clic sobre booton Close.
+
+        }
+
+        // resumen de 4to test
+        //1.Abrir el Fresh Market.
+        //2.Click en el botón "Contact Us"
+        //3. Click en el botón "Submit". Verificar que 3 mensajes de error son mostrados con sus valores
+        //4. Verifique que el desplegable "Categoria" contiene 5 opciones, que se pueden ver en la IU.
+        //5.Ingrese valores validos en todos los campos y pulse "Submit". Verifique que una aleta se muestra con el mensaje "Form submitted successfully"
+        //6. Click al boton "Accept" dentro del alerta.
+        [Test]
+        public void ContactUsTest()
+        {
+            using UITestContext uiTestContext = new UITestContext();
+            var driver = uiTestContext.Driver;
+            var homePage = new HomePageObject(driver);  //1
+            var contactUsForm = homePage.clickContactUs(); //2
+            contactUsForm.ClickSumit(); //3
+            //4.3.3
+            contactUsForm.GetDisplayedTitleErrorMessage().Should().Be("Please enter a title");
+            contactUsForm.GetDisplayedEmailErrorMessage().Should().Be("Please enter a valid email address");
+            contactUsForm.GetDisplayedTextErrorMessage().Should().Be("Please enter a message");
+            //4.4.2
+            contactUsForm.GetCategoryOptions().Should().BeEquivalentTo(new[] {
+                "Search Information", "Career query", "Fruit enquiry", "Improvements", "Other" });
+            //4.5.2 Ingresar datos válidos en el formulario y enviar
+            contactUsForm
+                .InputTextContactTitle("Jose")
+                .InputTextContactEmail("aespinozar@unmsm.edu.pe")
+                .InputTextContactMessage("This is my Message").ClickSumit();
+            //4.6 Validar alerta de éxito 
+            var alert = driver.SwitchTo().Alert();
+            alert.Text.Should().Be("Form submitted successfully!");
+            alert.Accept();
 
         }
         private FruitModel AddItemToCart(IList<FruitWebElement> displayedFruits, string fruitName, int quantity)
