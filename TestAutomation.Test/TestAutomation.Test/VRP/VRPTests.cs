@@ -23,6 +23,9 @@ namespace TestAutomation.Test.VRP
         [Test]
         public void LoginTests()
         {
+            using var context = new UITestContextVRP();
+            IWebDriver driver = context.Driver;
+
 
     }
 }
