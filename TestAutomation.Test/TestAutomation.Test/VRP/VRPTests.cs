@@ -30,5 +30,12 @@ namespace TestAutomation.Test.VRP
             var loginForm = new VRPHomePageObject(driver)
                                 .ClickSubmitButton();
 
+            // 2) Rellenar
+            loginForm
+                .EnterEmail("dereck.chochoca@gmail.com")
+                .EnterPassword("dereck");
+            // 3) Enviar
+            loginForm.ClickLogin();
+
     }
 }
