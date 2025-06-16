@@ -26,6 +26,9 @@ namespace TestAutomation.Test.VRP
             using var context = new UITestContextVRP();
             IWebDriver driver = context.Driver;
 
+            // 1) Click en "Ingresar"
+            var loginForm = new VRPHomePageObject(driver)
+                                .ClickSubmitButton();
 
     }
 }
