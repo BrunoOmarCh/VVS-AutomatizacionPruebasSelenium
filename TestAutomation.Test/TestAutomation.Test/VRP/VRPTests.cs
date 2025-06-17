@@ -37,5 +37,11 @@ namespace TestAutomation.Test.VRP
             // 3) Enviar
             loginForm.ClickLogin();
 
+            // 4) Verificar redirección al dashboard
+            WaitHelper.WaitForCondition(
+                () => driver.Url.Contains("dashboard"),
+                TestBase.TestSettings.WaitTimeout * 10000
+            );
+
     }
 }
