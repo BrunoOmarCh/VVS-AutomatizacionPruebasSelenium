@@ -48,6 +48,9 @@ namespace TestAutomation.Test.VRP
                 $"Se esperaba 'dashboard' en la URL tras login, pero se obtuvo: {driver.Url}"
             );
         }
+        [Test]
+        public void CreateTestVehicles()
+        {
 
     }
 }
