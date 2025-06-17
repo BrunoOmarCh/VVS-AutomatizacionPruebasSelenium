@@ -51,6 +51,8 @@ namespace TestAutomation.Test.VRP
         [Test]
         public void CreateTestVehicles()
         {
+            using var context = new UITestContextVRP();
+            var driver = context.Driver;
 
     }
 }
