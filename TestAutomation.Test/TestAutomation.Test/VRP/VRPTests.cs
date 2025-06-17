@@ -54,5 +54,11 @@ namespace TestAutomation.Test.VRP
             using var context = new UITestContextVRP();
             var driver = context.Driver;
 
+            new VRPHomePageObject(driver)
+                .ClickSubmitButton()
+                .EnterEmail("dereck.chochoca@gmail.com")
+                .EnterPassword("dereck")
+                .ClickLogin();
+
     }
 }
