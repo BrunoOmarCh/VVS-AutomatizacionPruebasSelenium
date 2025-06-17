@@ -60,5 +60,9 @@ namespace TestAutomation.Test.VRP
                 .EnterPassword("dereck")
                 .ClickLogin();
 
+            var addForm = new DashboardPageObject(driver)
+                              .ClickFlota()          // abre módulo
+                              .ClickAddVehicle();    // abre formulario
+
     }
 }
