@@ -43,5 +43,11 @@ namespace TestAutomation.Test.VRP
                 TestBase.TestSettings.WaitTimeout * 10000
             );
 
+            Assert.IsTrue(
+                driver.Url.Contains("dashboard"),
+                $"Se esperaba 'dashboard' en la URL tras login, pero se obtuvo: {driver.Url}"
+            );
+        }
+
     }
 }
