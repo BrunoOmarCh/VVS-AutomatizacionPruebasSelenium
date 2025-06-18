@@ -75,6 +75,10 @@ namespace TestAutomation.Test.VRP
                 .EnterMaxCapacidad(300)
                 .ClickSave();
 
+            WaitHelper.WaitForCondition(
+                () => driver.Url.Contains("/dashboard/flotas/vehiculos"),
+                TestSettings.WaitTimeout * 1000
+            );
         }
     }
 }
