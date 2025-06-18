@@ -64,5 +64,17 @@ namespace TestAutomation.Test.VRP
                               .ClickFlota()          // abre módulo
                               .ClickAddVehicle();    // abre formulario
 
+            addForm
+                .SelectFirstMarca()
+                .SelectFirstModelo()
+                .EnterAnoFabricacion(2020)
+                .SelectFirstColor()
+                .EnterPlaca("ALF-648")
+                .SelectFirstSoat()
+                .EnterMaxRecorrido(10000)
+                .EnterMaxCapacidad(300)
+                .ClickSave();
+
+        }
     }
 }
